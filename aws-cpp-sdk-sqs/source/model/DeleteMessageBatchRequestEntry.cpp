@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -71,10 +71,12 @@ void DeleteMessageBatchRequestEntry::OutputToStream(Aws::OStream& oStream, const
   {
       oStream << location << index << locationValue << ".Id=" << StringUtils::URLEncode(m_id.c_str()) << "&";
   }
+
   if(m_receiptHandleHasBeenSet)
   {
       oStream << location << index << locationValue << ".ReceiptHandle=" << StringUtils::URLEncode(m_receiptHandle.c_str()) << "&";
   }
+
 }
 
 void DeleteMessageBatchRequestEntry::OutputToStream(Aws::OStream& oStream, const char* location) const

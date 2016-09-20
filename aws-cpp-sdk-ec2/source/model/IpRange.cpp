@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -63,6 +63,7 @@ void IpRange::OutputToStream(Aws::OStream& oStream, const char* location, unsign
   {
       oStream << location << index << locationValue << ".CidrIp=" << StringUtils::URLEncode(m_cidrIp.c_str()) << "&";
   }
+
 }
 
 void IpRange::OutputToStream(Aws::OStream& oStream, const char* location) const

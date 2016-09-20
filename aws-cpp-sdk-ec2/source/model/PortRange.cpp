@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -75,10 +75,12 @@ void PortRange::OutputToStream(Aws::OStream& oStream, const char* location, unsi
   {
       oStream << location << index << locationValue << ".From=" << m_from << "&";
   }
+
   if(m_toHasBeenSet)
   {
       oStream << location << index << locationValue << ".To=" << m_to << "&";
   }
+
 }
 
 void PortRange::OutputToStream(Aws::OStream& oStream, const char* location) const

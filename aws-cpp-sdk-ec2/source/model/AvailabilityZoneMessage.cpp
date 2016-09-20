@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -63,6 +63,7 @@ void AvailabilityZoneMessage::OutputToStream(Aws::OStream& oStream, const char* 
   {
       oStream << location << index << locationValue << ".Message=" << StringUtils::URLEncode(m_message.c_str()) << "&";
   }
+
 }
 
 void AvailabilityZoneMessage::OutputToStream(Aws::OStream& oStream, const char* location) const

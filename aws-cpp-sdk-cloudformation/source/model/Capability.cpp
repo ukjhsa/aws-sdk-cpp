@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -30,6 +30,7 @@ namespace Aws
       {
 
         static const int CAPABILITY_IAM_HASH = HashingUtils::HashString("CAPABILITY_IAM");
+        static const int CAPABILITY_NAMED_IAM_HASH = HashingUtils::HashString("CAPABILITY_NAMED_IAM");
 
 
         Capability GetCapabilityForName(const Aws::String& name)
@@ -38,6 +39,10 @@ namespace Aws
           if (hashCode == CAPABILITY_IAM_HASH)
           {
             return Capability::CAPABILITY_IAM;
+          }
+          else if (hashCode == CAPABILITY_NAMED_IAM_HASH)
+          {
+            return Capability::CAPABILITY_NAMED_IAM;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -55,6 +60,8 @@ namespace Aws
           {
           case Capability::CAPABILITY_IAM:
             return "CAPABILITY_IAM";
+          case Capability::CAPABILITY_NAMED_IAM:
+            return "CAPABILITY_NAMED_IAM";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

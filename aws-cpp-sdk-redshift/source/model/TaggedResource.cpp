@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -81,14 +81,17 @@ void TaggedResource::OutputToStream(Aws::OStream& oStream, const char* location,
       tagLocationAndMemberSs << location << index << locationValue << ".Tag";
       m_tag.OutputToStream(oStream, tagLocationAndMemberSs.str().c_str());
   }
+
   if(m_resourceNameHasBeenSet)
   {
       oStream << location << index << locationValue << ".ResourceName=" << StringUtils::URLEncode(m_resourceName.c_str()) << "&";
   }
+
   if(m_resourceTypeHasBeenSet)
   {
       oStream << location << index << locationValue << ".ResourceType=" << StringUtils::URLEncode(m_resourceType.c_str()) << "&";
   }
+
 }
 
 void TaggedResource::OutputToStream(Aws::OStream& oStream, const char* location) const

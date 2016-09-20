@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -71,10 +71,12 @@ void CharacterSet::OutputToStream(Aws::OStream& oStream, const char* location, u
   {
       oStream << location << index << locationValue << ".CharacterSetName=" << StringUtils::URLEncode(m_characterSetName.c_str()) << "&";
   }
+
   if(m_characterSetDescriptionHasBeenSet)
   {
       oStream << location << index << locationValue << ".CharacterSetDescription=" << StringUtils::URLEncode(m_characterSetDescription.c_str()) << "&";
   }
+
 }
 
 void CharacterSet::OutputToStream(Aws::OStream& oStream, const char* location) const

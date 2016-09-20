@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -89,6 +89,7 @@ void CreateVolumePermissionModifications::OutputToStream(Aws::OStream& oStream, 
         item.OutputToStream(oStream, addSs.str().c_str());
       }
   }
+
   if(m_removeHasBeenSet)
   {
       unsigned removeIdx = 1;
@@ -99,6 +100,7 @@ void CreateVolumePermissionModifications::OutputToStream(Aws::OStream& oStream, 
         item.OutputToStream(oStream, removeSs.str().c_str());
       }
   }
+
 }
 
 void CreateVolumePermissionModifications::OutputToStream(Aws::OStream& oStream, const char* location) const

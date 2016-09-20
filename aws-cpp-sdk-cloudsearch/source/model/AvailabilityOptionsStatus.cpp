@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -73,12 +73,14 @@ void AvailabilityOptionsStatus::OutputToStream(Aws::OStream& oStream, const char
   {
       oStream << location << index << locationValue << ".Options=" << m_options << "&";
   }
+
   if(m_statusHasBeenSet)
   {
       Aws::StringStream statusLocationAndMemberSs;
       statusLocationAndMemberSs << location << index << locationValue << ".Status";
       m_status.OutputToStream(oStream, statusLocationAndMemberSs.str().c_str());
   }
+
 }
 
 void AvailabilityOptionsStatus::OutputToStream(Aws::OStream& oStream, const char* location) const

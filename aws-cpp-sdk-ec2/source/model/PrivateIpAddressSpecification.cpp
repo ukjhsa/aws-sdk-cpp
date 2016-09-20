@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -73,10 +73,12 @@ void PrivateIpAddressSpecification::OutputToStream(Aws::OStream& oStream, const 
   {
       oStream << location << index << locationValue << ".PrivateIpAddress=" << StringUtils::URLEncode(m_privateIpAddress.c_str()) << "&";
   }
+
   if(m_primaryHasBeenSet)
   {
       oStream << location << index << locationValue << ".Primary=" << m_primary << "&";
   }
+
 }
 
 void PrivateIpAddressSpecification::OutputToStream(Aws::OStream& oStream, const char* location) const

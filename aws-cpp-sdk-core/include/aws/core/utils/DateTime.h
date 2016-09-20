@@ -94,12 +94,12 @@ namespace Aws
              */
             DateTime(const char* timestamp, DateFormat format);
 
-            bool operator == (const DateTime& other);
-            bool operator < (const DateTime& other);
-            bool operator > (const DateTime& other);
-            bool operator != (const DateTime& other);
-            bool operator <= (const DateTime& other);
-            bool operator >= (const DateTime& other);
+            bool operator == (const DateTime& other) const;
+            bool operator < (const DateTime& other) const;
+            bool operator > (const DateTime& other) const;
+            bool operator != (const DateTime& other) const;
+            bool operator <= (const DateTime& other) const;
+            bool operator >= (const DateTime& other) const;
 
             /**
              * Assign from seconds.millis since epoch.
@@ -225,11 +225,6 @@ namespace Aws
              * The amazon timestamp format is a double with seconds.milliseconds
              */
             static double ComputeCurrentTimestampInAmazonFormat();
-
-	    /*
-	     * A platform-agnostic implementation of the timegm function from gnu extensions
-	     */
-	    static time_t TimeGM(tm* const t);
 
         private:
             std::chrono::system_clock::time_point m_time;

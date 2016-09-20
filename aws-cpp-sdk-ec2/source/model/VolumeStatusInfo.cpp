@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -77,6 +77,7 @@ void VolumeStatusInfo::OutputToStream(Aws::OStream& oStream, const char* locatio
   {
       oStream << location << index << locationValue << ".Status=" << VolumeStatusInfoStatusMapper::GetNameForVolumeStatusInfoStatus(m_status) << "&";
   }
+
   if(m_detailsHasBeenSet)
   {
       unsigned detailsIdx = 1;
@@ -87,6 +88,7 @@ void VolumeStatusInfo::OutputToStream(Aws::OStream& oStream, const char* locatio
         item.OutputToStream(oStream, detailsSs.str().c_str());
       }
   }
+
 }
 
 void VolumeStatusInfo::OutputToStream(Aws::OStream& oStream, const char* location) const

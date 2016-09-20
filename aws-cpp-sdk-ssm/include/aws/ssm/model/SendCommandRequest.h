@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ssm/model/DocumentHashType.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/ssm/model/NotificationConfig.h>
 
 namespace Aws
 {
@@ -38,42 +39,50 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
     /**
-     * <p>Required. The instance IDs where the command should execute.</p>
+     * <p>Required. The instance IDs where the command should execute. You can specify
+     * a maximum of 50 IDs.</p>
      */
     inline const Aws::Vector<Aws::String>& GetInstanceIds() const{ return m_instanceIds; }
 
     /**
-     * <p>Required. The instance IDs where the command should execute.</p>
+     * <p>Required. The instance IDs where the command should execute. You can specify
+     * a maximum of 50 IDs.</p>
      */
     inline void SetInstanceIds(const Aws::Vector<Aws::String>& value) { m_instanceIdsHasBeenSet = true; m_instanceIds = value; }
 
     /**
-     * <p>Required. The instance IDs where the command should execute.</p>
+     * <p>Required. The instance IDs where the command should execute. You can specify
+     * a maximum of 50 IDs.</p>
      */
     inline void SetInstanceIds(Aws::Vector<Aws::String>&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds = value; }
 
     /**
-     * <p>Required. The instance IDs where the command should execute.</p>
+     * <p>Required. The instance IDs where the command should execute. You can specify
+     * a maximum of 50 IDs.</p>
      */
     inline SendCommandRequest& WithInstanceIds(const Aws::Vector<Aws::String>& value) { SetInstanceIds(value); return *this;}
 
     /**
-     * <p>Required. The instance IDs where the command should execute.</p>
+     * <p>Required. The instance IDs where the command should execute. You can specify
+     * a maximum of 50 IDs.</p>
      */
     inline SendCommandRequest& WithInstanceIds(Aws::Vector<Aws::String>&& value) { SetInstanceIds(value); return *this;}
 
     /**
-     * <p>Required. The instance IDs where the command should execute.</p>
+     * <p>Required. The instance IDs where the command should execute. You can specify
+     * a maximum of 50 IDs.</p>
      */
     inline SendCommandRequest& AddInstanceIds(const Aws::String& value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(value); return *this; }
 
     /**
-     * <p>Required. The instance IDs where the command should execute.</p>
+     * <p>Required. The instance IDs where the command should execute. You can specify
+     * a maximum of 50 IDs.</p>
      */
     inline SendCommandRequest& AddInstanceIds(Aws::String&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(value); return *this; }
 
     /**
-     * <p>Required. The instance IDs where the command should execute.</p>
+     * <p>Required. The instance IDs where the command should execute. You can specify
+     * a maximum of 50 IDs.</p>
      */
     inline SendCommandRequest& AddInstanceIds(const char* value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(value); return *this; }
 
@@ -190,19 +199,19 @@ namespace Model
      * <p>If this time is reached and the command has not already started executing, it
      * will not execute.</p>
      */
-    inline long GetTimeoutSeconds() const{ return m_timeoutSeconds; }
+    inline int GetTimeoutSeconds() const{ return m_timeoutSeconds; }
 
     /**
      * <p>If this time is reached and the command has not already started executing, it
      * will not execute.</p>
      */
-    inline void SetTimeoutSeconds(long value) { m_timeoutSecondsHasBeenSet = true; m_timeoutSeconds = value; }
+    inline void SetTimeoutSeconds(int value) { m_timeoutSecondsHasBeenSet = true; m_timeoutSeconds = value; }
 
     /**
      * <p>If this time is reached and the command has not already started executing, it
      * will not execute.</p>
      */
-    inline SendCommandRequest& WithTimeoutSeconds(long value) { SetTimeoutSeconds(value); return *this;}
+    inline SendCommandRequest& WithTimeoutSeconds(int value) { SetTimeoutSeconds(value); return *this;}
 
     /**
      * <p>User-specified information about the command, such as a brief description of
@@ -396,6 +405,66 @@ namespace Model
      */
     inline SendCommandRequest& WithOutputS3KeyPrefix(const char* value) { SetOutputS3KeyPrefix(value); return *this;}
 
+    /**
+     * <p>The IAM role that SSM uses to send notifications. </p>
+     */
+    inline const Aws::String& GetServiceRoleArn() const{ return m_serviceRoleArn; }
+
+    /**
+     * <p>The IAM role that SSM uses to send notifications. </p>
+     */
+    inline void SetServiceRoleArn(const Aws::String& value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn = value; }
+
+    /**
+     * <p>The IAM role that SSM uses to send notifications. </p>
+     */
+    inline void SetServiceRoleArn(Aws::String&& value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn = value; }
+
+    /**
+     * <p>The IAM role that SSM uses to send notifications. </p>
+     */
+    inline void SetServiceRoleArn(const char* value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn.assign(value); }
+
+    /**
+     * <p>The IAM role that SSM uses to send notifications. </p>
+     */
+    inline SendCommandRequest& WithServiceRoleArn(const Aws::String& value) { SetServiceRoleArn(value); return *this;}
+
+    /**
+     * <p>The IAM role that SSM uses to send notifications. </p>
+     */
+    inline SendCommandRequest& WithServiceRoleArn(Aws::String&& value) { SetServiceRoleArn(value); return *this;}
+
+    /**
+     * <p>The IAM role that SSM uses to send notifications. </p>
+     */
+    inline SendCommandRequest& WithServiceRoleArn(const char* value) { SetServiceRoleArn(value); return *this;}
+
+    /**
+     * <p>Configurations for sending notifications.</p>
+     */
+    inline const NotificationConfig& GetNotificationConfig() const{ return m_notificationConfig; }
+
+    /**
+     * <p>Configurations for sending notifications.</p>
+     */
+    inline void SetNotificationConfig(const NotificationConfig& value) { m_notificationConfigHasBeenSet = true; m_notificationConfig = value; }
+
+    /**
+     * <p>Configurations for sending notifications.</p>
+     */
+    inline void SetNotificationConfig(NotificationConfig&& value) { m_notificationConfigHasBeenSet = true; m_notificationConfig = value; }
+
+    /**
+     * <p>Configurations for sending notifications.</p>
+     */
+    inline SendCommandRequest& WithNotificationConfig(const NotificationConfig& value) { SetNotificationConfig(value); return *this;}
+
+    /**
+     * <p>Configurations for sending notifications.</p>
+     */
+    inline SendCommandRequest& WithNotificationConfig(NotificationConfig&& value) { SetNotificationConfig(value); return *this;}
+
   private:
     Aws::Vector<Aws::String> m_instanceIds;
     bool m_instanceIdsHasBeenSet;
@@ -405,7 +474,7 @@ namespace Model
     bool m_documentHashHasBeenSet;
     DocumentHashType m_documentHashType;
     bool m_documentHashTypeHasBeenSet;
-    long m_timeoutSeconds;
+    int m_timeoutSeconds;
     bool m_timeoutSecondsHasBeenSet;
     Aws::String m_comment;
     bool m_commentHasBeenSet;
@@ -415,6 +484,10 @@ namespace Model
     bool m_outputS3BucketNameHasBeenSet;
     Aws::String m_outputS3KeyPrefix;
     bool m_outputS3KeyPrefixHasBeenSet;
+    Aws::String m_serviceRoleArn;
+    bool m_serviceRoleArnHasBeenSet;
+    NotificationConfig m_notificationConfig;
+    bool m_notificationConfigHasBeenSet;
   };
 
 } // namespace Model

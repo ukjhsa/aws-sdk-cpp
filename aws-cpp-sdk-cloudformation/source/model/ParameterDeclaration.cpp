@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -105,28 +105,34 @@ void ParameterDeclaration::OutputToStream(Aws::OStream& oStream, const char* loc
   {
       oStream << location << index << locationValue << ".ParameterKey=" << StringUtils::URLEncode(m_parameterKey.c_str()) << "&";
   }
+
   if(m_defaultValueHasBeenSet)
   {
       oStream << location << index << locationValue << ".DefaultValue=" << StringUtils::URLEncode(m_defaultValue.c_str()) << "&";
   }
+
   if(m_parameterTypeHasBeenSet)
   {
       oStream << location << index << locationValue << ".ParameterType=" << StringUtils::URLEncode(m_parameterType.c_str()) << "&";
   }
+
   if(m_noEchoHasBeenSet)
   {
       oStream << location << index << locationValue << ".NoEcho=" << m_noEcho << "&";
   }
+
   if(m_descriptionHasBeenSet)
   {
       oStream << location << index << locationValue << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
+
   if(m_parameterConstraintsHasBeenSet)
   {
       Aws::StringStream parameterConstraintsLocationAndMemberSs;
       parameterConstraintsLocationAndMemberSs << location << index << locationValue << ".ParameterConstraints";
       m_parameterConstraints.OutputToStream(oStream, parameterConstraintsLocationAndMemberSs.str().c_str());
   }
+
 }
 
 void ParameterDeclaration::OutputToStream(Aws::OStream& oStream, const char* location) const

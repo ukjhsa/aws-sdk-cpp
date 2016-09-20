@@ -72,11 +72,9 @@ namespace
     //windows won't let you hard code unicode strings in a source file and assign them to a char*. Every other compiler does and I need to test this.
     //to get around this, this string is url encoded version of "TestUnicode中国Key". At test time, we'll convert it to the unicode string
     static const char* URLENCODED_UNICODE_KEY = "TestUnicode%E4%B8%AD%E5%9B%BDKey";
-    static const char* URIESCAPE_KEY = "Escape+Me";
+    static const char* URIESCAPE_KEY = "Esc ape+Me$";
 
     static const int TIMEOUT_MAX = 10;
-
-    static const Aws::Region REGION = Aws::Region::US_EAST_1;
 
     class BucketAndObjectOperationTest : public ::testing::Test
     {
@@ -97,7 +95,7 @@ namespace
 
             // Create a client
             ClientConfiguration config;
-            config.region = REGION;
+            config.region = Aws::Region::US_EAST_1;
             config.scheme = Scheme::HTTPS;
             config.connectTimeoutMs = 30000;
             config.requestTimeoutMs = 30000;
@@ -113,6 +111,7 @@ namespace
 
             Client = Aws::MakeShared<S3Client>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG), config, false);
             config.region = Aws::Region::US_WEST_2;
+            config.useDualStack = true;
             oregonClient = Aws::MakeShared<S3Client>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG), config, false);
             m_HttpClient = Aws::Http::CreateHttpClient(config);
         }
@@ -130,6 +129,7 @@ namespace
             Limiter = nullptr;
             Client = nullptr;
             oregonClient = nullptr;
+            m_HttpClient = nullptr;
         }
 
         static std::shared_ptr<Aws::StringStream> Create5MbStreamForUploadPart(const char* partTag)

@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -71,10 +71,12 @@ void ElasticIpStatus::OutputToStream(Aws::OStream& oStream, const char* location
   {
       oStream << location << index << locationValue << ".ElasticIp=" << StringUtils::URLEncode(m_elasticIp.c_str()) << "&";
   }
+
   if(m_statusHasBeenSet)
   {
       oStream << location << index << locationValue << ".Status=" << StringUtils::URLEncode(m_status.c_str()) << "&";
   }
+
 }
 
 void ElasticIpStatus::OutputToStream(Aws::OStream& oStream, const char* location) const

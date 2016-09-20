@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -73,10 +73,12 @@ void PurchaseRequest::OutputToStream(Aws::OStream& oStream, const char* location
   {
       oStream << location << index << locationValue << ".PurchaseToken=" << StringUtils::URLEncode(m_purchaseToken.c_str()) << "&";
   }
+
   if(m_instanceCountHasBeenSet)
   {
       oStream << location << index << locationValue << ".InstanceCount=" << m_instanceCount << "&";
   }
+
 }
 
 void PurchaseRequest::OutputToStream(Aws::OStream& oStream, const char* location) const

@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -65,6 +65,7 @@ void AttributeBooleanValue::OutputToStream(Aws::OStream& oStream, const char* lo
   {
       oStream << location << index << locationValue << ".Value=" << m_value << "&";
   }
+
 }
 
 void AttributeBooleanValue::OutputToStream(Aws::OStream& oStream, const char* location) const

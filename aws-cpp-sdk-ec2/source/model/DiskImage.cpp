@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -81,16 +81,19 @@ void DiskImage::OutputToStream(Aws::OStream& oStream, const char* location, unsi
       imageLocationAndMemberSs << location << index << locationValue << ".Image";
       m_image.OutputToStream(oStream, imageLocationAndMemberSs.str().c_str());
   }
+
   if(m_descriptionHasBeenSet)
   {
       oStream << location << index << locationValue << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
+
   if(m_volumeHasBeenSet)
   {
       Aws::StringStream volumeLocationAndMemberSs;
       volumeLocationAndMemberSs << location << index << locationValue << ".Volume";
       m_volume.OutputToStream(oStream, volumeLocationAndMemberSs.str().c_str());
   }
+
 }
 
 void DiskImage::OutputToStream(Aws::OStream& oStream, const char* location) const

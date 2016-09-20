@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -151,17 +151,52 @@ namespace Model
     /**
      * <p>If required, the port configured for this option to use.</p>
      */
-    inline long GetPort() const{ return m_port; }
+    inline int GetPort() const{ return m_port; }
 
     /**
      * <p>If required, the port configured for this option to use.</p>
      */
-    inline void SetPort(long value) { m_portHasBeenSet = true; m_port = value; }
+    inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
 
     /**
      * <p>If required, the port configured for this option to use.</p>
      */
-    inline Option& WithPort(long value) { SetPort(value); return *this;}
+    inline Option& WithPort(int value) { SetPort(value); return *this;}
+
+    /**
+     * <p>The version of the option.</p>
+     */
+    inline const Aws::String& GetOptionVersion() const{ return m_optionVersion; }
+
+    /**
+     * <p>The version of the option.</p>
+     */
+    inline void SetOptionVersion(const Aws::String& value) { m_optionVersionHasBeenSet = true; m_optionVersion = value; }
+
+    /**
+     * <p>The version of the option.</p>
+     */
+    inline void SetOptionVersion(Aws::String&& value) { m_optionVersionHasBeenSet = true; m_optionVersion = value; }
+
+    /**
+     * <p>The version of the option.</p>
+     */
+    inline void SetOptionVersion(const char* value) { m_optionVersionHasBeenSet = true; m_optionVersion.assign(value); }
+
+    /**
+     * <p>The version of the option.</p>
+     */
+    inline Option& WithOptionVersion(const Aws::String& value) { SetOptionVersion(value); return *this;}
+
+    /**
+     * <p>The version of the option.</p>
+     */
+    inline Option& WithOptionVersion(Aws::String&& value) { SetOptionVersion(value); return *this;}
+
+    /**
+     * <p>The version of the option.</p>
+     */
+    inline Option& WithOptionVersion(const char* value) { SetOptionVersion(value); return *this;}
 
     /**
      * <p>The option settings for this option.</p>
@@ -291,8 +326,10 @@ namespace Model
     bool m_persistentHasBeenSet;
     bool m_permanent;
     bool m_permanentHasBeenSet;
-    long m_port;
+    int m_port;
     bool m_portHasBeenSet;
+    Aws::String m_optionVersion;
+    bool m_optionVersionHasBeenSet;
     Aws::Vector<OptionSetting> m_optionSettings;
     bool m_optionSettingsHasBeenSet;
     Aws::Vector<DBSecurityGroupMembership> m_dBSecurityGroupMemberships;

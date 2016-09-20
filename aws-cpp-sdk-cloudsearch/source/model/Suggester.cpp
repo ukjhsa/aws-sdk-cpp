@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -71,12 +71,14 @@ void Suggester::OutputToStream(Aws::OStream& oStream, const char* location, unsi
   {
       oStream << location << index << locationValue << ".SuggesterName=" << StringUtils::URLEncode(m_suggesterName.c_str()) << "&";
   }
+
   if(m_documentSuggesterOptionsHasBeenSet)
   {
       Aws::StringStream documentSuggesterOptionsLocationAndMemberSs;
       documentSuggesterOptionsLocationAndMemberSs << location << index << locationValue << ".DocumentSuggesterOptions";
       m_documentSuggesterOptions.OutputToStream(oStream, documentSuggesterOptionsLocationAndMemberSs.str().c_str());
   }
+
 }
 
 void Suggester::OutputToStream(Aws::OStream& oStream, const char* location) const

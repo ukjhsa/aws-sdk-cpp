@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -79,6 +79,7 @@ void BackendServerDescription::OutputToStream(Aws::OStream& oStream, const char*
   {
       oStream << location << index << locationValue << ".InstancePort=" << m_instancePort << "&";
   }
+
   if(m_policyNamesHasBeenSet)
   {
       unsigned policyNamesIdx = 1;
@@ -87,6 +88,7 @@ void BackendServerDescription::OutputToStream(Aws::OStream& oStream, const char*
         oStream << location << index << locationValue << ".PolicyNames.member." << policyNamesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
+
 }
 
 void BackendServerDescription::OutputToStream(Aws::OStream& oStream, const char* location) const

@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -85,10 +85,12 @@ void Item::OutputToStream(Aws::OStream& oStream, const char* location, unsigned 
   {
       oStream << location << index << locationValue << ".Name=" << StringUtils::URLEncode(m_name.c_str()) << "&";
   }
+
   if(m_alternateNameEncodingHasBeenSet)
   {
       oStream << location << index << locationValue << ".AlternateNameEncoding=" << StringUtils::URLEncode(m_alternateNameEncoding.c_str()) << "&";
   }
+
   if(m_attributesHasBeenSet)
   {
       unsigned attributesIdx = 1;
@@ -99,6 +101,7 @@ void Item::OutputToStream(Aws::OStream& oStream, const char* location, unsigned 
         item.OutputToStream(oStream, attributesSs.str().c_str());
       }
   }
+
 }
 
 void Item::OutputToStream(Aws::OStream& oStream, const char* location) const

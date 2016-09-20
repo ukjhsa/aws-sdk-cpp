@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -115,18 +115,22 @@ void StaleSecurityGroup::OutputToStream(Aws::OStream& oStream, const char* locat
   {
       oStream << location << index << locationValue << ".GroupId=" << StringUtils::URLEncode(m_groupId.c_str()) << "&";
   }
+
   if(m_groupNameHasBeenSet)
   {
       oStream << location << index << locationValue << ".GroupName=" << StringUtils::URLEncode(m_groupName.c_str()) << "&";
   }
+
   if(m_descriptionHasBeenSet)
   {
       oStream << location << index << locationValue << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
+
   if(m_vpcIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
   }
+
   if(m_staleIpPermissionsHasBeenSet)
   {
       unsigned staleIpPermissionsIdx = 1;
@@ -137,6 +141,7 @@ void StaleSecurityGroup::OutputToStream(Aws::OStream& oStream, const char* locat
         item.OutputToStream(oStream, staleIpPermissionsSs.str().c_str());
       }
   }
+
   if(m_staleIpPermissionsEgressHasBeenSet)
   {
       unsigned staleIpPermissionsEgressIdx = 1;
@@ -147,6 +152,7 @@ void StaleSecurityGroup::OutputToStream(Aws::OStream& oStream, const char* locat
         item.OutputToStream(oStream, staleIpPermissionsEgressSs.str().c_str());
       }
   }
+
 }
 
 void StaleSecurityGroup::OutputToStream(Aws::OStream& oStream, const char* location) const

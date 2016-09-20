@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -73,10 +73,12 @@ void InstanceState::OutputToStream(Aws::OStream& oStream, const char* location, 
   {
       oStream << location << index << locationValue << ".Code=" << m_code << "&";
   }
+
   if(m_nameHasBeenSet)
   {
       oStream << location << index << locationValue << ".Name=" << InstanceStateNameMapper::GetNameForInstanceStateName(m_name) << "&";
   }
+
 }
 
 void InstanceState::OutputToStream(Aws::OStream& oStream, const char* location) const

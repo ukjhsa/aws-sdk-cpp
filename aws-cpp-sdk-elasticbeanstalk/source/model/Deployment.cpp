@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -89,18 +89,22 @@ void Deployment::OutputToStream(Aws::OStream& oStream, const char* location, uns
   {
       oStream << location << index << locationValue << ".VersionLabel=" << StringUtils::URLEncode(m_versionLabel.c_str()) << "&";
   }
+
   if(m_deploymentIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".DeploymentId=" << m_deploymentId << "&";
   }
+
   if(m_statusHasBeenSet)
   {
       oStream << location << index << locationValue << ".Status=" << StringUtils::URLEncode(m_status.c_str()) << "&";
   }
+
   if(m_deploymentTimeHasBeenSet)
   {
       oStream << location << index << locationValue << ".DeploymentTime=" << StringUtils::URLEncode(m_deploymentTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
 }
 
 void Deployment::OutputToStream(Aws::OStream& oStream, const char* location) const

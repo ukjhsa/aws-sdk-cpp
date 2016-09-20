@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -73,10 +73,12 @@ void ReservedInstanceLimitPrice::OutputToStream(Aws::OStream& oStream, const cha
   {
         oStream << location << index << locationValue << ".Amount=" << StringUtils::URLEncode(m_amount) << "&";
   }
+
   if(m_currencyCodeHasBeenSet)
   {
       oStream << location << index << locationValue << ".CurrencyCode=" << CurrencyCodeValuesMapper::GetNameForCurrencyCodeValues(m_currencyCode) << "&";
   }
+
 }
 
 void ReservedInstanceLimitPrice::OutputToStream(Aws::OStream& oStream, const char* location) const

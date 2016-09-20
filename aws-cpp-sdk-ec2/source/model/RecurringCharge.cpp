@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -73,10 +73,12 @@ void RecurringCharge::OutputToStream(Aws::OStream& oStream, const char* location
   {
       oStream << location << index << locationValue << ".Frequency=" << RecurringChargeFrequencyMapper::GetNameForRecurringChargeFrequency(m_frequency) << "&";
   }
+
   if(m_amountHasBeenSet)
   {
         oStream << location << index << locationValue << ".Amount=" << StringUtils::URLEncode(m_amount) << "&";
   }
+
 }
 
 void RecurringCharge::OutputToStream(Aws::OStream& oStream, const char* location) const

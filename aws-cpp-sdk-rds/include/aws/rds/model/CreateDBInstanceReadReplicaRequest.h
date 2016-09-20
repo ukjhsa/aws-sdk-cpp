@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -96,7 +96,7 @@ namespace Model
      * Read Replica, specify a valid DB instance identifier.</p> </li> <li> <p>If the
      * source DB instance is in a different region than the Read Replica, specify a
      * valid DB instance ARN. For more information, go to <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN">
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
      * Constructing a Amazon RDS Amazon Resource Name (ARN)</a>.</p> </li> </ul>
      */
     inline const Aws::String& GetSourceDBInstanceIdentifier() const{ return m_sourceDBInstanceIdentifier; }
@@ -114,7 +114,7 @@ namespace Model
      * Read Replica, specify a valid DB instance identifier.</p> </li> <li> <p>If the
      * source DB instance is in a different region than the Read Replica, specify a
      * valid DB instance ARN. For more information, go to <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN">
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
      * Constructing a Amazon RDS Amazon Resource Name (ARN)</a>.</p> </li> </ul>
      */
     inline void SetSourceDBInstanceIdentifier(const Aws::String& value) { m_sourceDBInstanceIdentifierHasBeenSet = true; m_sourceDBInstanceIdentifier = value; }
@@ -132,7 +132,7 @@ namespace Model
      * Read Replica, specify a valid DB instance identifier.</p> </li> <li> <p>If the
      * source DB instance is in a different region than the Read Replica, specify a
      * valid DB instance ARN. For more information, go to <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN">
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
      * Constructing a Amazon RDS Amazon Resource Name (ARN)</a>.</p> </li> </ul>
      */
     inline void SetSourceDBInstanceIdentifier(Aws::String&& value) { m_sourceDBInstanceIdentifierHasBeenSet = true; m_sourceDBInstanceIdentifier = value; }
@@ -150,7 +150,7 @@ namespace Model
      * Read Replica, specify a valid DB instance identifier.</p> </li> <li> <p>If the
      * source DB instance is in a different region than the Read Replica, specify a
      * valid DB instance ARN. For more information, go to <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN">
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
      * Constructing a Amazon RDS Amazon Resource Name (ARN)</a>.</p> </li> </ul>
      */
     inline void SetSourceDBInstanceIdentifier(const char* value) { m_sourceDBInstanceIdentifierHasBeenSet = true; m_sourceDBInstanceIdentifier.assign(value); }
@@ -168,7 +168,7 @@ namespace Model
      * Read Replica, specify a valid DB instance identifier.</p> </li> <li> <p>If the
      * source DB instance is in a different region than the Read Replica, specify a
      * valid DB instance ARN. For more information, go to <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN">
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
      * Constructing a Amazon RDS Amazon Resource Name (ARN)</a>.</p> </li> </ul>
      */
     inline CreateDBInstanceReadReplicaRequest& WithSourceDBInstanceIdentifier(const Aws::String& value) { SetSourceDBInstanceIdentifier(value); return *this;}
@@ -186,7 +186,7 @@ namespace Model
      * Read Replica, specify a valid DB instance identifier.</p> </li> <li> <p>If the
      * source DB instance is in a different region than the Read Replica, specify a
      * valid DB instance ARN. For more information, go to <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN">
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
      * Constructing a Amazon RDS Amazon Resource Name (ARN)</a>.</p> </li> </ul>
      */
     inline CreateDBInstanceReadReplicaRequest& WithSourceDBInstanceIdentifier(Aws::String&& value) { SetSourceDBInstanceIdentifier(value); return *this;}
@@ -204,7 +204,7 @@ namespace Model
      * Read Replica, specify a valid DB instance identifier.</p> </li> <li> <p>If the
      * source DB instance is in a different region than the Read Replica, specify a
      * valid DB instance ARN. For more information, go to <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN">
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
      * Constructing a Amazon RDS Amazon Resource Name (ARN)</a>.</p> </li> </ul>
      */
     inline CreateDBInstanceReadReplicaRequest& WithSourceDBInstanceIdentifier(const char* value) { SetSourceDBInstanceIdentifier(value); return *this;}
@@ -340,21 +340,21 @@ namespace Model
      * Inherits from the source DB instance</p> <p>Valid Values:
      * <code>1150-65535</code> </p>
      */
-    inline long GetPort() const{ return m_port; }
+    inline int GetPort() const{ return m_port; }
 
     /**
      * <p>The port number that the DB instance uses for connections.</p> <p>Default:
      * Inherits from the source DB instance</p> <p>Valid Values:
      * <code>1150-65535</code> </p>
      */
-    inline void SetPort(long value) { m_portHasBeenSet = true; m_port = value; }
+    inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
 
     /**
      * <p>The port number that the DB instance uses for connections.</p> <p>Default:
      * Inherits from the source DB instance</p> <p>Valid Values:
      * <code>1150-65535</code> </p>
      */
-    inline CreateDBInstanceReadReplicaRequest& WithPort(long value) { SetPort(value); return *this;}
+    inline CreateDBInstanceReadReplicaRequest& WithPort(int value) { SetPort(value); return *this;}
 
     /**
      * <p>Indicates that minor engine upgrades will be applied automatically to the
@@ -381,19 +381,19 @@ namespace Model
      * <p>The amount of Provisioned IOPS (input/output operations per second) to be
      * initially allocated for the DB instance.</p>
      */
-    inline long GetIops() const{ return m_iops; }
+    inline int GetIops() const{ return m_iops; }
 
     /**
      * <p>The amount of Provisioned IOPS (input/output operations per second) to be
      * initially allocated for the DB instance.</p>
      */
-    inline void SetIops(long value) { m_iopsHasBeenSet = true; m_iops = value; }
+    inline void SetIops(int value) { m_iopsHasBeenSet = true; m_iops = value; }
 
     /**
      * <p>The amount of Provisioned IOPS (input/output operations per second) to be
      * initially allocated for the DB instance.</p>
      */
-    inline CreateDBInstanceReadReplicaRequest& WithIops(long value) { SetIops(value); return *this;}
+    inline CreateDBInstanceReadReplicaRequest& WithIops(int value) { SetIops(value); return *this;}
 
     /**
      * <p>The option group the DB instance will be associated with. If omitted, the
@@ -720,7 +720,7 @@ namespace Model
      * is specified, then you must also set <code>MonitoringInterval</code> to a value
      * other than 0.</p> <p>Valid Values: <code>0, 1, 5, 10, 15, 30, 60</code> </p>
      */
-    inline long GetMonitoringInterval() const{ return m_monitoringInterval; }
+    inline int GetMonitoringInterval() const{ return m_monitoringInterval; }
 
     /**
      * <p>The interval, in seconds, between points when Enhanced Monitoring metrics are
@@ -729,7 +729,7 @@ namespace Model
      * is specified, then you must also set <code>MonitoringInterval</code> to a value
      * other than 0.</p> <p>Valid Values: <code>0, 1, 5, 10, 15, 30, 60</code> </p>
      */
-    inline void SetMonitoringInterval(long value) { m_monitoringIntervalHasBeenSet = true; m_monitoringInterval = value; }
+    inline void SetMonitoringInterval(int value) { m_monitoringIntervalHasBeenSet = true; m_monitoringInterval = value; }
 
     /**
      * <p>The interval, in seconds, between points when Enhanced Monitoring metrics are
@@ -738,7 +738,7 @@ namespace Model
      * is specified, then you must also set <code>MonitoringInterval</code> to a value
      * other than 0.</p> <p>Valid Values: <code>0, 1, 5, 10, 15, 30, 60</code> </p>
      */
-    inline CreateDBInstanceReadReplicaRequest& WithMonitoringInterval(long value) { SetMonitoringInterval(value); return *this;}
+    inline CreateDBInstanceReadReplicaRequest& WithMonitoringInterval(int value) { SetMonitoringInterval(value); return *this;}
 
     /**
      * <p>The ARN for the IAM role that permits RDS to send enhanced monitoring metrics
@@ -833,11 +833,11 @@ namespace Model
     bool m_dBInstanceClassHasBeenSet;
     Aws::String m_availabilityZone;
     bool m_availabilityZoneHasBeenSet;
-    long m_port;
+    int m_port;
     bool m_portHasBeenSet;
     bool m_autoMinorVersionUpgrade;
     bool m_autoMinorVersionUpgradeHasBeenSet;
-    long m_iops;
+    int m_iops;
     bool m_iopsHasBeenSet;
     Aws::String m_optionGroupName;
     bool m_optionGroupNameHasBeenSet;
@@ -851,7 +851,7 @@ namespace Model
     bool m_storageTypeHasBeenSet;
     bool m_copyTagsToSnapshot;
     bool m_copyTagsToSnapshotHasBeenSet;
-    long m_monitoringInterval;
+    int m_monitoringInterval;
     bool m_monitoringIntervalHasBeenSet;
     Aws::String m_monitoringRoleArn;
     bool m_monitoringRoleArnHasBeenSet;

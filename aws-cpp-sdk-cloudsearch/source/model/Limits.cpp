@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -75,10 +75,12 @@ void Limits::OutputToStream(Aws::OStream& oStream, const char* location, unsigne
   {
       oStream << location << index << locationValue << ".MaximumReplicationCount=" << m_maximumReplicationCount << "&";
   }
+
   if(m_maximumPartitionCountHasBeenSet)
   {
       oStream << location << index << locationValue << ".MaximumPartitionCount=" << m_maximumPartitionCount << "&";
   }
+
 }
 
 void Limits::OutputToStream(Aws::OStream& oStream, const char* location) const

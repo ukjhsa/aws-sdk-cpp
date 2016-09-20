@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -191,7 +191,8 @@ namespace Model
      * that have been shared to my AWS account.</p> </li> <li> <p> <code>public</code>
      * - Return all DB snapshots that have been marked as public.</p> </li> </ul> <p>If
      * you don't specify a <code>SnapshotType</code> value, then both automated and
-     * manual snapshots are returned. You can include shared snapshots with these
+     * manual snapshots are returned. Shared and public DB snapshots are not included
+     * in the returned results by default. You can include shared snapshots with these
      * results by setting the <code>IncludeShared</code> parameter to
      * <code>true</code>. You can include public snapshots with these results by
      * setting the <code>IncludePublic</code> parameter to <code>true</code>.</p>
@@ -213,7 +214,8 @@ namespace Model
      * that have been shared to my AWS account.</p> </li> <li> <p> <code>public</code>
      * - Return all DB snapshots that have been marked as public.</p> </li> </ul> <p>If
      * you don't specify a <code>SnapshotType</code> value, then both automated and
-     * manual snapshots are returned. You can include shared snapshots with these
+     * manual snapshots are returned. Shared and public DB snapshots are not included
+     * in the returned results by default. You can include shared snapshots with these
      * results by setting the <code>IncludeShared</code> parameter to
      * <code>true</code>. You can include public snapshots with these results by
      * setting the <code>IncludePublic</code> parameter to <code>true</code>.</p>
@@ -235,7 +237,8 @@ namespace Model
      * that have been shared to my AWS account.</p> </li> <li> <p> <code>public</code>
      * - Return all DB snapshots that have been marked as public.</p> </li> </ul> <p>If
      * you don't specify a <code>SnapshotType</code> value, then both automated and
-     * manual snapshots are returned. You can include shared snapshots with these
+     * manual snapshots are returned. Shared and public DB snapshots are not included
+     * in the returned results by default. You can include shared snapshots with these
      * results by setting the <code>IncludeShared</code> parameter to
      * <code>true</code>. You can include public snapshots with these results by
      * setting the <code>IncludePublic</code> parameter to <code>true</code>.</p>
@@ -257,7 +260,8 @@ namespace Model
      * that have been shared to my AWS account.</p> </li> <li> <p> <code>public</code>
      * - Return all DB snapshots that have been marked as public.</p> </li> </ul> <p>If
      * you don't specify a <code>SnapshotType</code> value, then both automated and
-     * manual snapshots are returned. You can include shared snapshots with these
+     * manual snapshots are returned. Shared and public DB snapshots are not included
+     * in the returned results by default. You can include shared snapshots with these
      * results by setting the <code>IncludeShared</code> parameter to
      * <code>true</code>. You can include public snapshots with these results by
      * setting the <code>IncludePublic</code> parameter to <code>true</code>.</p>
@@ -279,7 +283,8 @@ namespace Model
      * that have been shared to my AWS account.</p> </li> <li> <p> <code>public</code>
      * - Return all DB snapshots that have been marked as public.</p> </li> </ul> <p>If
      * you don't specify a <code>SnapshotType</code> value, then both automated and
-     * manual snapshots are returned. You can include shared snapshots with these
+     * manual snapshots are returned. Shared and public DB snapshots are not included
+     * in the returned results by default. You can include shared snapshots with these
      * results by setting the <code>IncludeShared</code> parameter to
      * <code>true</code>. You can include public snapshots with these results by
      * setting the <code>IncludePublic</code> parameter to <code>true</code>.</p>
@@ -301,7 +306,8 @@ namespace Model
      * that have been shared to my AWS account.</p> </li> <li> <p> <code>public</code>
      * - Return all DB snapshots that have been marked as public.</p> </li> </ul> <p>If
      * you don't specify a <code>SnapshotType</code> value, then both automated and
-     * manual snapshots are returned. You can include shared snapshots with these
+     * manual snapshots are returned. Shared and public DB snapshots are not included
+     * in the returned results by default. You can include shared snapshots with these
      * results by setting the <code>IncludeShared</code> parameter to
      * <code>true</code>. You can include public snapshots with these results by
      * setting the <code>IncludePublic</code> parameter to <code>true</code>.</p>
@@ -323,7 +329,8 @@ namespace Model
      * that have been shared to my AWS account.</p> </li> <li> <p> <code>public</code>
      * - Return all DB snapshots that have been marked as public.</p> </li> </ul> <p>If
      * you don't specify a <code>SnapshotType</code> value, then both automated and
-     * manual snapshots are returned. You can include shared snapshots with these
+     * manual snapshots are returned. Shared and public DB snapshots are not included
+     * in the returned results by default. You can include shared snapshots with these
      * results by setting the <code>IncludeShared</code> parameter to
      * <code>true</code>. You can include public snapshots with these results by
      * setting the <code>IncludePublic</code> parameter to <code>true</code>.</p>
@@ -377,7 +384,7 @@ namespace Model
      * called a marker is included in the response so that the remaining results can be
      * retrieved. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
      */
-    inline long GetMaxRecords() const{ return m_maxRecords; }
+    inline int GetMaxRecords() const{ return m_maxRecords; }
 
     /**
      * <p> The maximum number of records to include in the response. If more records
@@ -385,7 +392,7 @@ namespace Model
      * called a marker is included in the response so that the remaining results can be
      * retrieved. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
      */
-    inline void SetMaxRecords(long value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
+    inline void SetMaxRecords(int value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
 
     /**
      * <p> The maximum number of records to include in the response. If more records
@@ -393,7 +400,7 @@ namespace Model
      * called a marker is included in the response so that the remaining results can be
      * retrieved. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
      */
-    inline DescribeDBSnapshotsRequest& WithMaxRecords(long value) { SetMaxRecords(value); return *this;}
+    inline DescribeDBSnapshotsRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
 
     /**
      * <p> An optional pagination token provided by a previous
@@ -517,7 +524,7 @@ namespace Model
     bool m_snapshotTypeHasBeenSet;
     Aws::Vector<Filter> m_filters;
     bool m_filtersHasBeenSet;
-    long m_maxRecords;
+    int m_maxRecords;
     bool m_maxRecordsHasBeenSet;
     Aws::String m_marker;
     bool m_markerHasBeenSet;

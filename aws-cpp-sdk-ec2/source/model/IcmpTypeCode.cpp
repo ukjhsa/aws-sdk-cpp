@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -75,10 +75,12 @@ void IcmpTypeCode::OutputToStream(Aws::OStream& oStream, const char* location, u
   {
       oStream << location << index << locationValue << ".Type=" << m_type << "&";
   }
+
   if(m_codeHasBeenSet)
   {
       oStream << location << index << locationValue << ".Code=" << m_code << "&";
   }
+
 }
 
 void IcmpTypeCode::OutputToStream(Aws::OStream& oStream, const char* location) const

@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -58,42 +58,47 @@ namespace Model
     inline GameSessionDetail& WithGameSession(GameSession&& value) { SetGameSession(value); return *this;}
 
     /**
-     * <p>Current status of protection for the game session. <ul><li>NoProtection: The
-     * game session can be terminated during a scale-down event.</li>
-     * <li>FullProtection: If the game session is in an ACTIVE status, it cannot be
-     * terminated during a scale-down event.</li></ul></p>
+     * <p>Current status of protection for the game session.</p>
+     * <ul><li><b>NoProtection</b> – The game session can be terminated during a
+     * scale-down event.</li> <li><b>FullProtection</b> – If the game session is in an
+     * <code>ACTIVE</code> status, it cannot be terminated during a scale-down
+     * event.</li></ul>
      */
     inline const ProtectionPolicy& GetProtectionPolicy() const{ return m_protectionPolicy; }
 
     /**
-     * <p>Current status of protection for the game session. <ul><li>NoProtection: The
-     * game session can be terminated during a scale-down event.</li>
-     * <li>FullProtection: If the game session is in an ACTIVE status, it cannot be
-     * terminated during a scale-down event.</li></ul></p>
+     * <p>Current status of protection for the game session.</p>
+     * <ul><li><b>NoProtection</b> – The game session can be terminated during a
+     * scale-down event.</li> <li><b>FullProtection</b> – If the game session is in an
+     * <code>ACTIVE</code> status, it cannot be terminated during a scale-down
+     * event.</li></ul>
      */
     inline void SetProtectionPolicy(const ProtectionPolicy& value) { m_protectionPolicyHasBeenSet = true; m_protectionPolicy = value; }
 
     /**
-     * <p>Current status of protection for the game session. <ul><li>NoProtection: The
-     * game session can be terminated during a scale-down event.</li>
-     * <li>FullProtection: If the game session is in an ACTIVE status, it cannot be
-     * terminated during a scale-down event.</li></ul></p>
+     * <p>Current status of protection for the game session.</p>
+     * <ul><li><b>NoProtection</b> – The game session can be terminated during a
+     * scale-down event.</li> <li><b>FullProtection</b> – If the game session is in an
+     * <code>ACTIVE</code> status, it cannot be terminated during a scale-down
+     * event.</li></ul>
      */
     inline void SetProtectionPolicy(ProtectionPolicy&& value) { m_protectionPolicyHasBeenSet = true; m_protectionPolicy = value; }
 
     /**
-     * <p>Current status of protection for the game session. <ul><li>NoProtection: The
-     * game session can be terminated during a scale-down event.</li>
-     * <li>FullProtection: If the game session is in an ACTIVE status, it cannot be
-     * terminated during a scale-down event.</li></ul></p>
+     * <p>Current status of protection for the game session.</p>
+     * <ul><li><b>NoProtection</b> – The game session can be terminated during a
+     * scale-down event.</li> <li><b>FullProtection</b> – If the game session is in an
+     * <code>ACTIVE</code> status, it cannot be terminated during a scale-down
+     * event.</li></ul>
      */
     inline GameSessionDetail& WithProtectionPolicy(const ProtectionPolicy& value) { SetProtectionPolicy(value); return *this;}
 
     /**
-     * <p>Current status of protection for the game session. <ul><li>NoProtection: The
-     * game session can be terminated during a scale-down event.</li>
-     * <li>FullProtection: If the game session is in an ACTIVE status, it cannot be
-     * terminated during a scale-down event.</li></ul></p>
+     * <p>Current status of protection for the game session.</p>
+     * <ul><li><b>NoProtection</b> – The game session can be terminated during a
+     * scale-down event.</li> <li><b>FullProtection</b> – If the game session is in an
+     * <code>ACTIVE</code> status, it cannot be terminated during a scale-down
+     * event.</li></ul>
      */
     inline GameSessionDetail& WithProtectionPolicy(ProtectionPolicy&& value) { SetProtectionPolicy(value); return *this;}
 

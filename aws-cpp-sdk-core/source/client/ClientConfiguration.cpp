@@ -16,10 +16,10 @@
 #include <aws/core/client/ClientConfiguration.h>
 
 #include <aws/core/client/DefaultRetryStrategy.h>
+#include <aws/core/platform/OSVersionInfo.h>
 #include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/threading/Executor.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
-#include <aws/core/utils/OSVersionInfo.h>
 #include <aws/core/Version.h>
 
 namespace Aws
@@ -32,7 +32,7 @@ static const char* CLIENT_CONFIGURATION_ALLOCATION_TAG = "ClientConfiguration";
 static Aws::String ComputeUserAgentString()
 {
   Aws::StringStream ss;
-  ss << "aws-sdk-cpp/" << Version::GetVersionString() << " " <<  Aws::Utils::ComputeOSVersionString();
+  ss << "aws-sdk-cpp/" << Version::GetVersionString() << " " <<  Aws::OSVersionInfo::ComputeOSVersionString();
   return ss.str();
 }
 
@@ -40,6 +40,7 @@ ClientConfiguration::ClientConfiguration() :
     userAgent(ComputeUserAgentString()), 
     scheme(Aws::Http::Scheme::HTTPS), 
     region(Region::US_EAST_1),
+    useDualStack(false),
     maxConnections(25), 
     requestTimeoutMs(3000), 
     connectTimeoutMs(1000),

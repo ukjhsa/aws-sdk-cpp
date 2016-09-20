@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -71,10 +71,12 @@ void OptionRestrictionRegex::OutputToStream(Aws::OStream& oStream, const char* l
   {
       oStream << location << index << locationValue << ".Pattern=" << StringUtils::URLEncode(m_pattern.c_str()) << "&";
   }
+
   if(m_labelHasBeenSet)
   {
       oStream << location << index << locationValue << ".Label=" << StringUtils::URLEncode(m_label.c_str()) << "&";
   }
+
 }
 
 void OptionRestrictionRegex::OutputToStream(Aws::OStream& oStream, const char* location) const

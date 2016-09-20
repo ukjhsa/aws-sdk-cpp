@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -95,18 +95,22 @@ void StatisticSet::OutputToStream(Aws::OStream& oStream, const char* location, u
   {
         oStream << location << index << locationValue << ".SampleCount=" << StringUtils::URLEncode(m_sampleCount) << "&";
   }
+
   if(m_sumHasBeenSet)
   {
         oStream << location << index << locationValue << ".Sum=" << StringUtils::URLEncode(m_sum) << "&";
   }
+
   if(m_minimumHasBeenSet)
   {
         oStream << location << index << locationValue << ".Minimum=" << StringUtils::URLEncode(m_minimum) << "&";
   }
+
   if(m_maximumHasBeenSet)
   {
         oStream << location << index << locationValue << ".Maximum=" << StringUtils::URLEncode(m_maximum) << "&";
   }
+
 }
 
 void StatisticSet::OutputToStream(Aws::OStream& oStream, const char* location) const

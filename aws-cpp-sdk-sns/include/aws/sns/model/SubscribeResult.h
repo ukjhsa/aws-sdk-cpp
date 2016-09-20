@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -34,7 +34,7 @@ namespace SNS
 namespace Model
 {
   /**
-   * Response for Subscribe action.
+   * <p>Response for Subscribe action.</p>
    */
   class AWS_SNS_API SubscribeResult
   {

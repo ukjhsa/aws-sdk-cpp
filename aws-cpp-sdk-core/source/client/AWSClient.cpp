@@ -148,6 +148,11 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::String& uri,
                 request.GetBody()->seekg(0);
             }
 
+            if (request.GetRequestRetryHandler())
+            {
+                request.GetRequestRetryHandler()(request);
+            }
+
             m_httpClient->RetryRequestSleep(std::chrono::milliseconds(sleepMillis));
         }
     }
@@ -267,10 +272,11 @@ void AWSClient::AddContentBodyToRequest(const std::shared_ptr<Aws::Http::HttpReq
     httpRequest->AddContentBody(body);
 
     //If there is no body, we have a content length of 0
+    //note: we also used to remove content-type, but S3 actually needs content-type on InitiateMultipartUpload and it isn't
+    //forbiden by the spec. If we start getting weird errors related to this, make sure it isn't caused by this removal.
     if (!body)
     {
-        AWS_LOG_TRACE(AWS_CLIENT_LOG_TAG, "No content body, removing content-type and content-length headers");
-        httpRequest->DeleteHeader(Http::CONTENT_TYPE_HEADER);
+        AWS_LOG_TRACE(AWS_CLIENT_LOG_TAG, "No content body, content-length headers");
 
         if(httpRequest->GetMethod() == HttpMethod::HTTP_POST || httpRequest->GetMethod() == HttpMethod::HTTP_PUT)
         {        
@@ -323,6 +329,7 @@ void AWSClient::BuildHttpRequest(const Aws::AmazonWebServiceRequest& request,
     // Pass along handlers for processing data sent/received in bytes
     httpRequest->SetDataReceivedEventHandler(request.GetDataReceivedEventHandler());
     httpRequest->SetDataSentEventHandler(request.GetDataSentEventHandler());
+    httpRequest->SetContinueRequestHandle(request.GetContinueRequestHandler());
 
     request.AddQueryStringParameters(httpRequest->GetUri());
 }
@@ -413,7 +420,7 @@ AWSError<CoreErrors> AWSJsonClient::BuildAWSError(
     if (!httpResponse->GetResponseBody() || httpResponse->GetResponseBody().tellp() < 1)
     {
         Aws::StringStream ss;
-        ss << "No response body.  Response code: " << httpResponse->GetResponseCode();
+        ss << "No response body.  Response code: " << static_cast< uint32_t >( httpResponse->GetResponseCode() );
         AWS_LOG_ERROR(AWS_CLIENT_LOG_TAG, ss.str().c_str());
         return AWSError<CoreErrors>(CoreErrors::UNKNOWN, "", ss.str(), false);
     }
@@ -504,7 +511,7 @@ AWSError<CoreErrors> AWSXMLClient::BuildAWSError(const std::shared_ptr<Http::Htt
     if (httpResponse->GetResponseBody().tellp() < 1)
     {
         Aws::StringStream ss;
-        ss << "No response body.  Response code: " << httpResponse->GetResponseCode();
+        ss << "No response body.  Response code: " << static_cast< uint32_t >( httpResponse->GetResponseCode() );
         AWS_LOG_ERROR(AWS_CLIENT_LOG_TAG, ss.str().c_str());
         return AWSError<CoreErrors>(CoreErrors::UNKNOWN, "", ss.str(), false);
     }
@@ -545,7 +552,7 @@ AWSError<CoreErrors> AWSXMLClient::BuildAWSError(const std::shared_ptr<Http::Htt
     // An error occurred attempting to parse the httpResponse as an XML stream, so we're just
     // going to dump the XML parsing error and the http response code as a string
     Aws::StringStream ss;
-    ss << "Unable to generate a proper httpResponse from the response stream.   Response code: " << httpResponse->GetResponseCode();
+    ss << "Unable to generate a proper httpResponse from the response stream.   Response code: " << static_cast< uint32_t >( httpResponse->GetResponseCode() );
     return GetErrorMarshaller()->Marshall(StringUtils::Trim(doc.GetErrorMessage().c_str()), ss.str().c_str());
 
 }

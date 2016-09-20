@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -79,16 +79,19 @@ void AnalysisScheme::OutputToStream(Aws::OStream& oStream, const char* location,
   {
       oStream << location << index << locationValue << ".AnalysisSchemeName=" << StringUtils::URLEncode(m_analysisSchemeName.c_str()) << "&";
   }
+
   if(m_analysisSchemeLanguageHasBeenSet)
   {
       oStream << location << index << locationValue << ".AnalysisSchemeLanguage=" << AnalysisSchemeLanguageMapper::GetNameForAnalysisSchemeLanguage(m_analysisSchemeLanguage) << "&";
   }
+
   if(m_analysisOptionsHasBeenSet)
   {
       Aws::StringStream analysisOptionsLocationAndMemberSs;
       analysisOptionsLocationAndMemberSs << location << index << locationValue << ".AnalysisOptions";
       m_analysisOptions.OutputToStream(oStream, analysisOptionsLocationAndMemberSs.str().c_str());
   }
+
 }
 
 void AnalysisScheme::OutputToStream(Aws::OStream& oStream, const char* location) const

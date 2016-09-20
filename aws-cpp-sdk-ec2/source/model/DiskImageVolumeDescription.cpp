@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -73,10 +73,12 @@ void DiskImageVolumeDescription::OutputToStream(Aws::OStream& oStream, const cha
   {
       oStream << location << index << locationValue << ".Size=" << m_size << "&";
   }
+
   if(m_idHasBeenSet)
   {
       oStream << location << index << locationValue << ".Id=" << StringUtils::URLEncode(m_id.c_str()) << "&";
   }
+
 }
 
 void DiskImageVolumeDescription::OutputToStream(Aws::OStream& oStream, const char* location) const

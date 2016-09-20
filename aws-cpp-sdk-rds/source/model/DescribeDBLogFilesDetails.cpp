@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -83,14 +83,17 @@ void DescribeDBLogFilesDetails::OutputToStream(Aws::OStream& oStream, const char
   {
       oStream << location << index << locationValue << ".LogFileName=" << StringUtils::URLEncode(m_logFileName.c_str()) << "&";
   }
+
   if(m_lastWrittenHasBeenSet)
   {
       oStream << location << index << locationValue << ".LastWritten=" << m_lastWritten << "&";
   }
+
   if(m_sizeHasBeenSet)
   {
       oStream << location << index << locationValue << ".Size=" << m_size << "&";
   }
+
 }
 
 void DescribeDBLogFilesDetails::OutputToStream(Aws::OStream& oStream, const char* location) const

@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -73,12 +73,14 @@ void Body::OutputToStream(Aws::OStream& oStream, const char* location, unsigned 
       textLocationAndMemberSs << location << index << locationValue << ".Text";
       m_text.OutputToStream(oStream, textLocationAndMemberSs.str().c_str());
   }
+
   if(m_htmlHasBeenSet)
   {
       Aws::StringStream htmlLocationAndMemberSs;
       htmlLocationAndMemberSs << location << index << locationValue << ".Html";
       m_html.OutputToStream(oStream, htmlLocationAndMemberSs.str().c_str());
   }
+
 }
 
 void Body::OutputToStream(Aws::OStream& oStream, const char* location) const

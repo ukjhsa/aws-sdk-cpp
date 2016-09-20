@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -87,18 +87,22 @@ void S3Action::OutputToStream(Aws::OStream& oStream, const char* location, unsig
   {
       oStream << location << index << locationValue << ".TopicArn=" << StringUtils::URLEncode(m_topicArn.c_str()) << "&";
   }
+
   if(m_bucketNameHasBeenSet)
   {
       oStream << location << index << locationValue << ".BucketName=" << StringUtils::URLEncode(m_bucketName.c_str()) << "&";
   }
+
   if(m_objectKeyPrefixHasBeenSet)
   {
       oStream << location << index << locationValue << ".ObjectKeyPrefix=" << StringUtils::URLEncode(m_objectKeyPrefix.c_str()) << "&";
   }
+
   if(m_kmsKeyArnHasBeenSet)
   {
       oStream << location << index << locationValue << ".KmsKeyArn=" << StringUtils::URLEncode(m_kmsKeyArn.c_str()) << "&";
   }
+
 }
 
 void S3Action::OutputToStream(Aws::OStream& oStream, const char* location) const

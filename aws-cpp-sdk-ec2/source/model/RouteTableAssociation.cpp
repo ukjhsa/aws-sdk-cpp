@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -89,18 +89,22 @@ void RouteTableAssociation::OutputToStream(Aws::OStream& oStream, const char* lo
   {
       oStream << location << index << locationValue << ".RouteTableAssociationId=" << StringUtils::URLEncode(m_routeTableAssociationId.c_str()) << "&";
   }
+
   if(m_routeTableIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".RouteTableId=" << StringUtils::URLEncode(m_routeTableId.c_str()) << "&";
   }
+
   if(m_subnetIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".SubnetId=" << StringUtils::URLEncode(m_subnetId.c_str()) << "&";
   }
+
   if(m_mainHasBeenSet)
   {
       oStream << location << index << locationValue << ".Main=" << m_main << "&";
   }
+
 }
 
 void RouteTableAssociation::OutputToStream(Aws::OStream& oStream, const char* location) const

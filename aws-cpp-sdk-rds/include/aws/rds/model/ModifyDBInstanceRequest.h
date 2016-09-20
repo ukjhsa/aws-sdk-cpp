@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -132,7 +132,7 @@ namespace Model
      * modifying the instance, rebooting the instance, deleting the instance, creating
      * a Read Replica for the instance, and creating a DB snapshot of the instance.</p>
      */
-    inline long GetAllocatedStorage() const{ return m_allocatedStorage; }
+    inline int GetAllocatedStorage() const{ return m_allocatedStorage; }
 
     /**
      * <p> The new storage capacity of the RDS instance. Changing this setting does not
@@ -169,7 +169,7 @@ namespace Model
      * modifying the instance, rebooting the instance, deleting the instance, creating
      * a Read Replica for the instance, and creating a DB snapshot of the instance.</p>
      */
-    inline void SetAllocatedStorage(long value) { m_allocatedStorageHasBeenSet = true; m_allocatedStorage = value; }
+    inline void SetAllocatedStorage(int value) { m_allocatedStorageHasBeenSet = true; m_allocatedStorage = value; }
 
     /**
      * <p> The new storage capacity of the RDS instance. Changing this setting does not
@@ -206,7 +206,7 @@ namespace Model
      * modifying the instance, rebooting the instance, deleting the instance, creating
      * a Read Replica for the instance, and creating a DB snapshot of the instance.</p>
      */
-    inline ModifyDBInstanceRequest& WithAllocatedStorage(long value) { SetAllocatedStorage(value); return *this;}
+    inline ModifyDBInstanceRequest& WithAllocatedStorage(int value) { SetAllocatedStorage(value); return *this;}
 
     /**
      * <p> The new compute and memory capacity of the DB instance. To determine the
@@ -319,6 +319,111 @@ namespace Model
      * db.t2.medium | db.t2.large</code> </p>
      */
     inline ModifyDBInstanceRequest& WithDBInstanceClass(const char* value) { SetDBInstanceClass(value); return *this;}
+
+    /**
+     * <p>The new DB subnet group for the DB instance. You can use this parameter to
+     * move your DB instance to a different VPC, or to a different subnet group in the
+     * same VPC. If your DB instance is not in a VPC, you can also use this parameter
+     * to move your DB instance into a VPC. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html#USER_VPC.Non-VPC2VPC">Updating
+     * the VPC for a DB Instance</a>. </p> <p>Changing the subnet group causes an
+     * outage during the change. The change is applied during the next maintenance
+     * window, unless you specify <code>true</code> for the
+     * <code>ApplyImmediately</code> parameter. </p> <p>Constraints: Must contain no
+     * more than 255 alphanumeric characters, periods, underscores, spaces, or
+     * hyphens.</p> <p>Example: <code>mySubnetGroup</code> </p>
+     */
+    inline const Aws::String& GetDBSubnetGroupName() const{ return m_dBSubnetGroupName; }
+
+    /**
+     * <p>The new DB subnet group for the DB instance. You can use this parameter to
+     * move your DB instance to a different VPC, or to a different subnet group in the
+     * same VPC. If your DB instance is not in a VPC, you can also use this parameter
+     * to move your DB instance into a VPC. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html#USER_VPC.Non-VPC2VPC">Updating
+     * the VPC for a DB Instance</a>. </p> <p>Changing the subnet group causes an
+     * outage during the change. The change is applied during the next maintenance
+     * window, unless you specify <code>true</code> for the
+     * <code>ApplyImmediately</code> parameter. </p> <p>Constraints: Must contain no
+     * more than 255 alphanumeric characters, periods, underscores, spaces, or
+     * hyphens.</p> <p>Example: <code>mySubnetGroup</code> </p>
+     */
+    inline void SetDBSubnetGroupName(const Aws::String& value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName = value; }
+
+    /**
+     * <p>The new DB subnet group for the DB instance. You can use this parameter to
+     * move your DB instance to a different VPC, or to a different subnet group in the
+     * same VPC. If your DB instance is not in a VPC, you can also use this parameter
+     * to move your DB instance into a VPC. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html#USER_VPC.Non-VPC2VPC">Updating
+     * the VPC for a DB Instance</a>. </p> <p>Changing the subnet group causes an
+     * outage during the change. The change is applied during the next maintenance
+     * window, unless you specify <code>true</code> for the
+     * <code>ApplyImmediately</code> parameter. </p> <p>Constraints: Must contain no
+     * more than 255 alphanumeric characters, periods, underscores, spaces, or
+     * hyphens.</p> <p>Example: <code>mySubnetGroup</code> </p>
+     */
+    inline void SetDBSubnetGroupName(Aws::String&& value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName = value; }
+
+    /**
+     * <p>The new DB subnet group for the DB instance. You can use this parameter to
+     * move your DB instance to a different VPC, or to a different subnet group in the
+     * same VPC. If your DB instance is not in a VPC, you can also use this parameter
+     * to move your DB instance into a VPC. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html#USER_VPC.Non-VPC2VPC">Updating
+     * the VPC for a DB Instance</a>. </p> <p>Changing the subnet group causes an
+     * outage during the change. The change is applied during the next maintenance
+     * window, unless you specify <code>true</code> for the
+     * <code>ApplyImmediately</code> parameter. </p> <p>Constraints: Must contain no
+     * more than 255 alphanumeric characters, periods, underscores, spaces, or
+     * hyphens.</p> <p>Example: <code>mySubnetGroup</code> </p>
+     */
+    inline void SetDBSubnetGroupName(const char* value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName.assign(value); }
+
+    /**
+     * <p>The new DB subnet group for the DB instance. You can use this parameter to
+     * move your DB instance to a different VPC, or to a different subnet group in the
+     * same VPC. If your DB instance is not in a VPC, you can also use this parameter
+     * to move your DB instance into a VPC. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html#USER_VPC.Non-VPC2VPC">Updating
+     * the VPC for a DB Instance</a>. </p> <p>Changing the subnet group causes an
+     * outage during the change. The change is applied during the next maintenance
+     * window, unless you specify <code>true</code> for the
+     * <code>ApplyImmediately</code> parameter. </p> <p>Constraints: Must contain no
+     * more than 255 alphanumeric characters, periods, underscores, spaces, or
+     * hyphens.</p> <p>Example: <code>mySubnetGroup</code> </p>
+     */
+    inline ModifyDBInstanceRequest& WithDBSubnetGroupName(const Aws::String& value) { SetDBSubnetGroupName(value); return *this;}
+
+    /**
+     * <p>The new DB subnet group for the DB instance. You can use this parameter to
+     * move your DB instance to a different VPC, or to a different subnet group in the
+     * same VPC. If your DB instance is not in a VPC, you can also use this parameter
+     * to move your DB instance into a VPC. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html#USER_VPC.Non-VPC2VPC">Updating
+     * the VPC for a DB Instance</a>. </p> <p>Changing the subnet group causes an
+     * outage during the change. The change is applied during the next maintenance
+     * window, unless you specify <code>true</code> for the
+     * <code>ApplyImmediately</code> parameter. </p> <p>Constraints: Must contain no
+     * more than 255 alphanumeric characters, periods, underscores, spaces, or
+     * hyphens.</p> <p>Example: <code>mySubnetGroup</code> </p>
+     */
+    inline ModifyDBInstanceRequest& WithDBSubnetGroupName(Aws::String&& value) { SetDBSubnetGroupName(value); return *this;}
+
+    /**
+     * <p>The new DB subnet group for the DB instance. You can use this parameter to
+     * move your DB instance to a different VPC, or to a different subnet group in the
+     * same VPC. If your DB instance is not in a VPC, you can also use this parameter
+     * to move your DB instance into a VPC. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html#USER_VPC.Non-VPC2VPC">Updating
+     * the VPC for a DB Instance</a>. </p> <p>Changing the subnet group causes an
+     * outage during the change. The change is applied during the next maintenance
+     * window, unless you specify <code>true</code> for the
+     * <code>ApplyImmediately</code> parameter. </p> <p>Constraints: Must contain no
+     * more than 255 alphanumeric characters, periods, underscores, spaces, or
+     * hyphens.</p> <p>Example: <code>mySubnetGroup</code> </p>
+     */
+    inline ModifyDBInstanceRequest& WithDBSubnetGroupName(const char* value) { SetDBSubnetGroupName(value); return *this;}
 
     /**
      * <p>A list of DB security groups to authorize on this DB instance. Changing this
@@ -739,7 +844,7 @@ namespace Model
      * <p>Cannot be set to 0 if the DB instance is a source to Read Replicas</p> </li>
      * </ul>
      */
-    inline long GetBackupRetentionPeriod() const{ return m_backupRetentionPeriod; }
+    inline int GetBackupRetentionPeriod() const{ return m_backupRetentionPeriod; }
 
     /**
      * <p>The number of days to retain automated backups. Setting this parameter to a
@@ -757,7 +862,7 @@ namespace Model
      * <p>Cannot be set to 0 if the DB instance is a source to Read Replicas</p> </li>
      * </ul>
      */
-    inline void SetBackupRetentionPeriod(long value) { m_backupRetentionPeriodHasBeenSet = true; m_backupRetentionPeriod = value; }
+    inline void SetBackupRetentionPeriod(int value) { m_backupRetentionPeriodHasBeenSet = true; m_backupRetentionPeriod = value; }
 
     /**
      * <p>The number of days to retain automated backups. Setting this parameter to a
@@ -775,7 +880,7 @@ namespace Model
      * <p>Cannot be set to 0 if the DB instance is a source to Read Replicas</p> </li>
      * </ul>
      */
-    inline ModifyDBInstanceRequest& WithBackupRetentionPeriod(long value) { SetBackupRetentionPeriod(value); return *this;}
+    inline ModifyDBInstanceRequest& WithBackupRetentionPeriod(int value) { SetBackupRetentionPeriod(value); return *this;}
 
     /**
      * <p> The daily time range during which automated backups are created if automated
@@ -971,9 +1076,7 @@ namespace Model
      * parameter does not result in an outage and the change is applied during the next
      * maintenance window unless the <code>ApplyImmediately</code> parameter is set to
      * <code>true</code> for this request. </p> <p>Constraints: Cannot be specified if
-     * the DB instance is a Read Replica. This parameter cannot be used with SQL Server
-     * DB instances. Multi-AZ for SQL Server DB instances is set using the Mirroring
-     * option in an option group associated with the DB instance.</p>
+     * the DB instance is a Read Replica.</p>
      */
     inline bool GetMultiAZ() const{ return m_multiAZ; }
 
@@ -982,9 +1085,7 @@ namespace Model
      * parameter does not result in an outage and the change is applied during the next
      * maintenance window unless the <code>ApplyImmediately</code> parameter is set to
      * <code>true</code> for this request. </p> <p>Constraints: Cannot be specified if
-     * the DB instance is a Read Replica. This parameter cannot be used with SQL Server
-     * DB instances. Multi-AZ for SQL Server DB instances is set using the Mirroring
-     * option in an option group associated with the DB instance.</p>
+     * the DB instance is a Read Replica.</p>
      */
     inline void SetMultiAZ(bool value) { m_multiAZHasBeenSet = true; m_multiAZ = value; }
 
@@ -993,9 +1094,7 @@ namespace Model
      * parameter does not result in an outage and the change is applied during the next
      * maintenance window unless the <code>ApplyImmediately</code> parameter is set to
      * <code>true</code> for this request. </p> <p>Constraints: Cannot be specified if
-     * the DB instance is a Read Replica. This parameter cannot be used with SQL Server
-     * DB instances. Multi-AZ for SQL Server DB instances is set using the Mirroring
-     * option in an option group associated with the DB instance.</p>
+     * the DB instance is a Read Replica.</p>
      */
     inline ModifyDBInstanceRequest& WithMultiAZ(bool value) { SetMultiAZ(value); return *this;}
 
@@ -1151,32 +1250,53 @@ namespace Model
     inline ModifyDBInstanceRequest& WithAutoMinorVersionUpgrade(bool value) { SetAutoMinorVersionUpgrade(value); return *this;}
 
     /**
-     * <p> The new Provisioned IOPS (I/O operations per second) value for the RDS
-     * instance. Changing this setting does not result in an outage and the change is
-     * applied during the next maintenance window unless the
-     * <code>ApplyImmediately</code> parameter is set to <code>true</code> for this
-     * request. </p> <p>Default: Uses existing setting</p> <p>Constraints: Value
-     * supplied must be at least 10% greater than the current value. Values that are
-     * not at least 10% greater than the existing value are rounded up so that they are
-     * 10% greater than the current value. If you are migrating from Provisioned IOPS
-     * to standard storage, set this value to 0. The DB instance will require a reboot
-     * for the change in storage type to take effect.</p> <p> <b>SQL Server</b> </p>
-     * <p>Setting the IOPS value for the SQL Server database engine is not
-     * supported.</p> <p>Type: Integer</p> <p>If you choose to migrate your DB instance
-     * from using standard storage to using Provisioned IOPS, or from using Provisioned
-     * IOPS to using standard storage, the process can take time. The duration of the
-     * migration depends on several factors such as database load, storage size,
-     * storage type (standard or Provisioned IOPS), amount of IOPS provisioned (if
-     * any), and the number of prior scale storage operations. Typical migration times
-     * are under 24 hours, but the process can take up to several days in some cases.
-     * During the migration, the DB instance will be available for use, but might
-     * experience performance degradation. While the migration takes place, nightly
-     * backups for the instance will be suspended. No other Amazon RDS operations can
-     * take place for the instance, including modifying the instance, rebooting the
-     * instance, deleting the instance, creating a Read Replica for the instance, and
-     * creating a DB snapshot of the instance.</p>
+     * <p>The license model for the DB instance.</p> <p>Valid values:
+     * <code>license-included</code> | <code>bring-your-own-license</code> |
+     * <code>general-public-license</code> </p>
      */
-    inline long GetIops() const{ return m_iops; }
+    inline const Aws::String& GetLicenseModel() const{ return m_licenseModel; }
+
+    /**
+     * <p>The license model for the DB instance.</p> <p>Valid values:
+     * <code>license-included</code> | <code>bring-your-own-license</code> |
+     * <code>general-public-license</code> </p>
+     */
+    inline void SetLicenseModel(const Aws::String& value) { m_licenseModelHasBeenSet = true; m_licenseModel = value; }
+
+    /**
+     * <p>The license model for the DB instance.</p> <p>Valid values:
+     * <code>license-included</code> | <code>bring-your-own-license</code> |
+     * <code>general-public-license</code> </p>
+     */
+    inline void SetLicenseModel(Aws::String&& value) { m_licenseModelHasBeenSet = true; m_licenseModel = value; }
+
+    /**
+     * <p>The license model for the DB instance.</p> <p>Valid values:
+     * <code>license-included</code> | <code>bring-your-own-license</code> |
+     * <code>general-public-license</code> </p>
+     */
+    inline void SetLicenseModel(const char* value) { m_licenseModelHasBeenSet = true; m_licenseModel.assign(value); }
+
+    /**
+     * <p>The license model for the DB instance.</p> <p>Valid values:
+     * <code>license-included</code> | <code>bring-your-own-license</code> |
+     * <code>general-public-license</code> </p>
+     */
+    inline ModifyDBInstanceRequest& WithLicenseModel(const Aws::String& value) { SetLicenseModel(value); return *this;}
+
+    /**
+     * <p>The license model for the DB instance.</p> <p>Valid values:
+     * <code>license-included</code> | <code>bring-your-own-license</code> |
+     * <code>general-public-license</code> </p>
+     */
+    inline ModifyDBInstanceRequest& WithLicenseModel(Aws::String&& value) { SetLicenseModel(value); return *this;}
+
+    /**
+     * <p>The license model for the DB instance.</p> <p>Valid values:
+     * <code>license-included</code> | <code>bring-your-own-license</code> |
+     * <code>general-public-license</code> </p>
+     */
+    inline ModifyDBInstanceRequest& WithLicenseModel(const char* value) { SetLicenseModel(value); return *this;}
 
     /**
      * <p> The new Provisioned IOPS (I/O operations per second) value for the RDS
@@ -1204,7 +1324,7 @@ namespace Model
      * instance, deleting the instance, creating a Read Replica for the instance, and
      * creating a DB snapshot of the instance.</p>
      */
-    inline void SetIops(long value) { m_iopsHasBeenSet = true; m_iops = value; }
+    inline int GetIops() const{ return m_iops; }
 
     /**
      * <p> The new Provisioned IOPS (I/O operations per second) value for the RDS
@@ -1232,7 +1352,35 @@ namespace Model
      * instance, deleting the instance, creating a Read Replica for the instance, and
      * creating a DB snapshot of the instance.</p>
      */
-    inline ModifyDBInstanceRequest& WithIops(long value) { SetIops(value); return *this;}
+    inline void SetIops(int value) { m_iopsHasBeenSet = true; m_iops = value; }
+
+    /**
+     * <p> The new Provisioned IOPS (I/O operations per second) value for the RDS
+     * instance. Changing this setting does not result in an outage and the change is
+     * applied during the next maintenance window unless the
+     * <code>ApplyImmediately</code> parameter is set to <code>true</code> for this
+     * request. </p> <p>Default: Uses existing setting</p> <p>Constraints: Value
+     * supplied must be at least 10% greater than the current value. Values that are
+     * not at least 10% greater than the existing value are rounded up so that they are
+     * 10% greater than the current value. If you are migrating from Provisioned IOPS
+     * to standard storage, set this value to 0. The DB instance will require a reboot
+     * for the change in storage type to take effect.</p> <p> <b>SQL Server</b> </p>
+     * <p>Setting the IOPS value for the SQL Server database engine is not
+     * supported.</p> <p>Type: Integer</p> <p>If you choose to migrate your DB instance
+     * from using standard storage to using Provisioned IOPS, or from using Provisioned
+     * IOPS to using standard storage, the process can take time. The duration of the
+     * migration depends on several factors such as database load, storage size,
+     * storage type (standard or Provisioned IOPS), amount of IOPS provisioned (if
+     * any), and the number of prior scale storage operations. Typical migration times
+     * are under 24 hours, but the process can take up to several days in some cases.
+     * During the migration, the DB instance will be available for use, but might
+     * experience performance degradation. While the migration takes place, nightly
+     * backups for the instance will be suspended. No other Amazon RDS operations can
+     * take place for the instance, including modifying the instance, rebooting the
+     * instance, deleting the instance, creating a Read Replica for the instance, and
+     * creating a DB snapshot of the instance.</p>
+     */
+    inline ModifyDBInstanceRequest& WithIops(int value) { SetIops(value); return *this;}
 
     /**
      * <p> Indicates that the DB instance should be associated with the specified
@@ -1599,58 +1747,58 @@ namespace Model
     inline ModifyDBInstanceRequest& WithCACertificateIdentifier(const char* value) { SetCACertificateIdentifier(value); return *this;}
 
     /**
-     * <p>Specify the Active Directory Domain to move the instance to.</p> <p>The
-     * specified Active Directory Domain must be created prior to this operation.
-     * Currently only a SQL Server instance can be created in a Active Directory
-     * Domain.</p>
+     * <p>The Active Directory Domain to move the instance to. Specify
+     * <code>none</code> to remove the instance from its current domain. The domain
+     * must be created prior to this operation. Currently only a Microsoft SQL Server
+     * instance can be created in a Active Directory Domain. </p>
      */
     inline const Aws::String& GetDomain() const{ return m_domain; }
 
     /**
-     * <p>Specify the Active Directory Domain to move the instance to.</p> <p>The
-     * specified Active Directory Domain must be created prior to this operation.
-     * Currently only a SQL Server instance can be created in a Active Directory
-     * Domain.</p>
+     * <p>The Active Directory Domain to move the instance to. Specify
+     * <code>none</code> to remove the instance from its current domain. The domain
+     * must be created prior to this operation. Currently only a Microsoft SQL Server
+     * instance can be created in a Active Directory Domain. </p>
      */
     inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
 
     /**
-     * <p>Specify the Active Directory Domain to move the instance to.</p> <p>The
-     * specified Active Directory Domain must be created prior to this operation.
-     * Currently only a SQL Server instance can be created in a Active Directory
-     * Domain.</p>
+     * <p>The Active Directory Domain to move the instance to. Specify
+     * <code>none</code> to remove the instance from its current domain. The domain
+     * must be created prior to this operation. Currently only a Microsoft SQL Server
+     * instance can be created in a Active Directory Domain. </p>
      */
     inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = value; }
 
     /**
-     * <p>Specify the Active Directory Domain to move the instance to.</p> <p>The
-     * specified Active Directory Domain must be created prior to this operation.
-     * Currently only a SQL Server instance can be created in a Active Directory
-     * Domain.</p>
+     * <p>The Active Directory Domain to move the instance to. Specify
+     * <code>none</code> to remove the instance from its current domain. The domain
+     * must be created prior to this operation. Currently only a Microsoft SQL Server
+     * instance can be created in a Active Directory Domain. </p>
      */
     inline void SetDomain(const char* value) { m_domainHasBeenSet = true; m_domain.assign(value); }
 
     /**
-     * <p>Specify the Active Directory Domain to move the instance to.</p> <p>The
-     * specified Active Directory Domain must be created prior to this operation.
-     * Currently only a SQL Server instance can be created in a Active Directory
-     * Domain.</p>
+     * <p>The Active Directory Domain to move the instance to. Specify
+     * <code>none</code> to remove the instance from its current domain. The domain
+     * must be created prior to this operation. Currently only a Microsoft SQL Server
+     * instance can be created in a Active Directory Domain. </p>
      */
     inline ModifyDBInstanceRequest& WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
 
     /**
-     * <p>Specify the Active Directory Domain to move the instance to.</p> <p>The
-     * specified Active Directory Domain must be created prior to this operation.
-     * Currently only a SQL Server instance can be created in a Active Directory
-     * Domain.</p>
+     * <p>The Active Directory Domain to move the instance to. Specify
+     * <code>none</code> to remove the instance from its current domain. The domain
+     * must be created prior to this operation. Currently only a Microsoft SQL Server
+     * instance can be created in a Active Directory Domain. </p>
      */
     inline ModifyDBInstanceRequest& WithDomain(Aws::String&& value) { SetDomain(value); return *this;}
 
     /**
-     * <p>Specify the Active Directory Domain to move the instance to.</p> <p>The
-     * specified Active Directory Domain must be created prior to this operation.
-     * Currently only a SQL Server instance can be created in a Active Directory
-     * Domain.</p>
+     * <p>The Active Directory Domain to move the instance to. Specify
+     * <code>none</code> to remove the instance from its current domain. The domain
+     * must be created prior to this operation. Currently only a Microsoft SQL Server
+     * instance can be created in a Active Directory Domain. </p>
      */
     inline ModifyDBInstanceRequest& WithDomain(const char* value) { SetDomain(value); return *this;}
 
@@ -1679,7 +1827,7 @@ namespace Model
      * is specified, then you must also set <code>MonitoringInterval</code> to a value
      * other than 0.</p> <p>Valid Values: <code>0, 1, 5, 10, 15, 30, 60</code> </p>
      */
-    inline long GetMonitoringInterval() const{ return m_monitoringInterval; }
+    inline int GetMonitoringInterval() const{ return m_monitoringInterval; }
 
     /**
      * <p>The interval, in seconds, between points when Enhanced Monitoring metrics are
@@ -1688,7 +1836,7 @@ namespace Model
      * is specified, then you must also set <code>MonitoringInterval</code> to a value
      * other than 0.</p> <p>Valid Values: <code>0, 1, 5, 10, 15, 30, 60</code> </p>
      */
-    inline void SetMonitoringInterval(long value) { m_monitoringIntervalHasBeenSet = true; m_monitoringInterval = value; }
+    inline void SetMonitoringInterval(int value) { m_monitoringIntervalHasBeenSet = true; m_monitoringInterval = value; }
 
     /**
      * <p>The interval, in seconds, between points when Enhanced Monitoring metrics are
@@ -1697,7 +1845,7 @@ namespace Model
      * is specified, then you must also set <code>MonitoringInterval</code> to a value
      * other than 0.</p> <p>Valid Values: <code>0, 1, 5, 10, 15, 30, 60</code> </p>
      */
-    inline ModifyDBInstanceRequest& WithMonitoringInterval(long value) { SetMonitoringInterval(value); return *this;}
+    inline ModifyDBInstanceRequest& WithMonitoringInterval(int value) { SetMonitoringInterval(value); return *this;}
 
     /**
      * <p>The port number on which the database accepts connections.</p> <p>The value
@@ -1717,7 +1865,7 @@ namespace Model
      * <code>49156</code>. </p> <p> <b>Amazon Aurora</b> </p> <p> Default:
      * <code>3306</code> </p> <p> Valid Values: <code>1150-65535</code> </p>
      */
-    inline long GetDBPortNumber() const{ return m_dBPortNumber; }
+    inline int GetDBPortNumber() const{ return m_dBPortNumber; }
 
     /**
      * <p>The port number on which the database accepts connections.</p> <p>The value
@@ -1737,7 +1885,7 @@ namespace Model
      * <code>49156</code>. </p> <p> <b>Amazon Aurora</b> </p> <p> Default:
      * <code>3306</code> </p> <p> Valid Values: <code>1150-65535</code> </p>
      */
-    inline void SetDBPortNumber(long value) { m_dBPortNumberHasBeenSet = true; m_dBPortNumber = value; }
+    inline void SetDBPortNumber(int value) { m_dBPortNumberHasBeenSet = true; m_dBPortNumber = value; }
 
     /**
      * <p>The port number on which the database accepts connections.</p> <p>The value
@@ -1757,7 +1905,7 @@ namespace Model
      * <code>49156</code>. </p> <p> <b>Amazon Aurora</b> </p> <p> Default:
      * <code>3306</code> </p> <p> Valid Values: <code>1150-65535</code> </p>
      */
-    inline ModifyDBInstanceRequest& WithDBPortNumber(long value) { SetDBPortNumber(value); return *this;}
+    inline ModifyDBInstanceRequest& WithDBPortNumber(int value) { SetDBPortNumber(value); return *this;}
 
     /**
      * <p>Boolean value that indicates if the DB instance has a publicly resolvable DNS
@@ -1886,44 +2034,44 @@ namespace Model
     inline ModifyDBInstanceRequest& WithMonitoringRoleArn(const char* value) { SetMonitoringRoleArn(value); return *this;}
 
     /**
-     * <p>Specify the name of the IAM role to be used when making API calls to the
-     * Directory Service.</p>
+     * <p>The name of the IAM role to use when making API calls to the Directory
+     * Service.</p>
      */
     inline const Aws::String& GetDomainIAMRoleName() const{ return m_domainIAMRoleName; }
 
     /**
-     * <p>Specify the name of the IAM role to be used when making API calls to the
-     * Directory Service.</p>
+     * <p>The name of the IAM role to use when making API calls to the Directory
+     * Service.</p>
      */
     inline void SetDomainIAMRoleName(const Aws::String& value) { m_domainIAMRoleNameHasBeenSet = true; m_domainIAMRoleName = value; }
 
     /**
-     * <p>Specify the name of the IAM role to be used when making API calls to the
-     * Directory Service.</p>
+     * <p>The name of the IAM role to use when making API calls to the Directory
+     * Service.</p>
      */
     inline void SetDomainIAMRoleName(Aws::String&& value) { m_domainIAMRoleNameHasBeenSet = true; m_domainIAMRoleName = value; }
 
     /**
-     * <p>Specify the name of the IAM role to be used when making API calls to the
-     * Directory Service.</p>
+     * <p>The name of the IAM role to use when making API calls to the Directory
+     * Service.</p>
      */
     inline void SetDomainIAMRoleName(const char* value) { m_domainIAMRoleNameHasBeenSet = true; m_domainIAMRoleName.assign(value); }
 
     /**
-     * <p>Specify the name of the IAM role to be used when making API calls to the
-     * Directory Service.</p>
+     * <p>The name of the IAM role to use when making API calls to the Directory
+     * Service.</p>
      */
     inline ModifyDBInstanceRequest& WithDomainIAMRoleName(const Aws::String& value) { SetDomainIAMRoleName(value); return *this;}
 
     /**
-     * <p>Specify the name of the IAM role to be used when making API calls to the
-     * Directory Service.</p>
+     * <p>The name of the IAM role to use when making API calls to the Directory
+     * Service.</p>
      */
     inline ModifyDBInstanceRequest& WithDomainIAMRoleName(Aws::String&& value) { SetDomainIAMRoleName(value); return *this;}
 
     /**
-     * <p>Specify the name of the IAM role to be used when making API calls to the
-     * Directory Service.</p>
+     * <p>The name of the IAM role to use when making API calls to the Directory
+     * Service.</p>
      */
     inline ModifyDBInstanceRequest& WithDomainIAMRoleName(const char* value) { SetDomainIAMRoleName(value); return *this;}
 
@@ -1935,7 +2083,7 @@ namespace Model
      * Fault Tolerance for an Aurora DB Cluster</a>. </p> <p>Default: 1</p> <p>Valid
      * Values: 0 - 15</p>
      */
-    inline long GetPromotionTier() const{ return m_promotionTier; }
+    inline int GetPromotionTier() const{ return m_promotionTier; }
 
     /**
      * <p>A value that specifies the order in which an Aurora Replica is promoted to
@@ -1945,7 +2093,7 @@ namespace Model
      * Fault Tolerance for an Aurora DB Cluster</a>. </p> <p>Default: 1</p> <p>Valid
      * Values: 0 - 15</p>
      */
-    inline void SetPromotionTier(long value) { m_promotionTierHasBeenSet = true; m_promotionTier = value; }
+    inline void SetPromotionTier(int value) { m_promotionTierHasBeenSet = true; m_promotionTier = value; }
 
     /**
      * <p>A value that specifies the order in which an Aurora Replica is promoted to
@@ -1955,15 +2103,17 @@ namespace Model
      * Fault Tolerance for an Aurora DB Cluster</a>. </p> <p>Default: 1</p> <p>Valid
      * Values: 0 - 15</p>
      */
-    inline ModifyDBInstanceRequest& WithPromotionTier(long value) { SetPromotionTier(value); return *this;}
+    inline ModifyDBInstanceRequest& WithPromotionTier(int value) { SetPromotionTier(value); return *this;}
 
   private:
     Aws::String m_dBInstanceIdentifier;
     bool m_dBInstanceIdentifierHasBeenSet;
-    long m_allocatedStorage;
+    int m_allocatedStorage;
     bool m_allocatedStorageHasBeenSet;
     Aws::String m_dBInstanceClass;
     bool m_dBInstanceClassHasBeenSet;
+    Aws::String m_dBSubnetGroupName;
+    bool m_dBSubnetGroupNameHasBeenSet;
     Aws::Vector<Aws::String> m_dBSecurityGroups;
     bool m_dBSecurityGroupsHasBeenSet;
     Aws::Vector<Aws::String> m_vpcSecurityGroupIds;
@@ -1974,7 +2124,7 @@ namespace Model
     bool m_masterUserPasswordHasBeenSet;
     Aws::String m_dBParameterGroupName;
     bool m_dBParameterGroupNameHasBeenSet;
-    long m_backupRetentionPeriod;
+    int m_backupRetentionPeriod;
     bool m_backupRetentionPeriodHasBeenSet;
     Aws::String m_preferredBackupWindow;
     bool m_preferredBackupWindowHasBeenSet;
@@ -1988,7 +2138,9 @@ namespace Model
     bool m_allowMajorVersionUpgradeHasBeenSet;
     bool m_autoMinorVersionUpgrade;
     bool m_autoMinorVersionUpgradeHasBeenSet;
-    long m_iops;
+    Aws::String m_licenseModel;
+    bool m_licenseModelHasBeenSet;
+    int m_iops;
     bool m_iopsHasBeenSet;
     Aws::String m_optionGroupName;
     bool m_optionGroupNameHasBeenSet;
@@ -2006,9 +2158,9 @@ namespace Model
     bool m_domainHasBeenSet;
     bool m_copyTagsToSnapshot;
     bool m_copyTagsToSnapshotHasBeenSet;
-    long m_monitoringInterval;
+    int m_monitoringInterval;
     bool m_monitoringIntervalHasBeenSet;
-    long m_dBPortNumber;
+    int m_dBPortNumber;
     bool m_dBPortNumberHasBeenSet;
     bool m_publiclyAccessible;
     bool m_publiclyAccessibleHasBeenSet;
@@ -2016,7 +2168,7 @@ namespace Model
     bool m_monitoringRoleArnHasBeenSet;
     Aws::String m_domainIAMRoleName;
     bool m_domainIAMRoleNameHasBeenSet;
-    long m_promotionTier;
+    int m_promotionTier;
     bool m_promotionTierHasBeenSet;
   };
 

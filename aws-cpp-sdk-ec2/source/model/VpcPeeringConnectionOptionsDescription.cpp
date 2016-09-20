@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -75,10 +75,12 @@ void VpcPeeringConnectionOptionsDescription::OutputToStream(Aws::OStream& oStrea
   {
       oStream << location << index << locationValue << ".AllowEgressFromLocalClassicLinkToRemoteVpc=" << m_allowEgressFromLocalClassicLinkToRemoteVpc << "&";
   }
+
   if(m_allowEgressFromLocalVpcToRemoteClassicLinkHasBeenSet)
   {
       oStream << location << index << locationValue << ".AllowEgressFromLocalVpcToRemoteClassicLink=" << m_allowEgressFromLocalVpcToRemoteClassicLink << "&";
   }
+
 }
 
 void VpcPeeringConnectionOptionsDescription::OutputToStream(Aws::OStream& oStream, const char* location) const

@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -65,6 +65,7 @@ void Storage::OutputToStream(Aws::OStream& oStream, const char* location, unsign
       s3LocationAndMemberSs << location << index << locationValue << ".S3";
       m_s3.OutputToStream(oStream, s3LocationAndMemberSs.str().c_str());
   }
+
 }
 
 void Storage::OutputToStream(Aws::OStream& oStream, const char* location) const

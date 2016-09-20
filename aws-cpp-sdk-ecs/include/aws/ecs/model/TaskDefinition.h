@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -16,6 +16,7 @@
 #include <aws/ecs/ECS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ecs/model/NetworkMode.h>
 #include <aws/ecs/model/TaskDefinitionStatus.h>
 #include <aws/ecs/model/ContainerDefinition.h>
 #include <aws/ecs/model/Volume.h>
@@ -85,7 +86,7 @@ namespace Model
      * <p>A list of container definitions in JSON format that describe the different
      * containers that make up your task. For more information about container
      * definition parameters and defaults, see <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AmazonECS/latest/developerguidetask_defintions.html">Amazon
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon
      * ECS Task Definitions</a> in the <i>Amazon EC2 Container Service Developer
      * Guide</i>.</p>
      */
@@ -95,7 +96,7 @@ namespace Model
      * <p>A list of container definitions in JSON format that describe the different
      * containers that make up your task. For more information about container
      * definition parameters and defaults, see <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AmazonECS/latest/developerguidetask_defintions.html">Amazon
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon
      * ECS Task Definitions</a> in the <i>Amazon EC2 Container Service Developer
      * Guide</i>.</p>
      */
@@ -105,7 +106,7 @@ namespace Model
      * <p>A list of container definitions in JSON format that describe the different
      * containers that make up your task. For more information about container
      * definition parameters and defaults, see <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AmazonECS/latest/developerguidetask_defintions.html">Amazon
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon
      * ECS Task Definitions</a> in the <i>Amazon EC2 Container Service Developer
      * Guide</i>.</p>
      */
@@ -115,7 +116,7 @@ namespace Model
      * <p>A list of container definitions in JSON format that describe the different
      * containers that make up your task. For more information about container
      * definition parameters and defaults, see <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AmazonECS/latest/developerguidetask_defintions.html">Amazon
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon
      * ECS Task Definitions</a> in the <i>Amazon EC2 Container Service Developer
      * Guide</i>.</p>
      */
@@ -125,7 +126,7 @@ namespace Model
      * <p>A list of container definitions in JSON format that describe the different
      * containers that make up your task. For more information about container
      * definition parameters and defaults, see <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AmazonECS/latest/developerguidetask_defintions.html">Amazon
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon
      * ECS Task Definitions</a> in the <i>Amazon EC2 Container Service Developer
      * Guide</i>.</p>
      */
@@ -135,7 +136,7 @@ namespace Model
      * <p>A list of container definitions in JSON format that describe the different
      * containers that make up your task. For more information about container
      * definition parameters and defaults, see <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AmazonECS/latest/developerguidetask_defintions.html">Amazon
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon
      * ECS Task Definitions</a> in the <i>Amazon EC2 Container Service Developer
      * Guide</i>.</p>
      */
@@ -145,7 +146,7 @@ namespace Model
      * <p>A list of container definitions in JSON format that describe the different
      * containers that make up your task. For more information about container
      * definition parameters and defaults, see <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AmazonECS/latest/developerguidetask_defintions.html">Amazon
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon
      * ECS Task Definitions</a> in the <i>Amazon EC2 Container Service Developer
      * Guide</i>.</p>
      */
@@ -187,14 +188,123 @@ namespace Model
     inline TaskDefinition& WithFamily(const char* value) { SetFamily(value); return *this;}
 
     /**
-     * <p>The revision of the task in a particular family. The revision is a version
-     * number of a task definition in a family. When you register a task definition for
-     * the first time, the revision is <code>1</code>; each time you register a new
-     * revision of a task definition in the same family, the revision value always
-     * increases by one (even if you have deregistered previous revisions in this
-     * family).</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM role that containers in this task
+     * can assume. All containers in this task are granted the permissions that are
+     * specified in this role.</p>
      */
-    inline long GetRevision() const{ return m_revision; }
+    inline const Aws::String& GetTaskRoleArn() const{ return m_taskRoleArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM role that containers in this task
+     * can assume. All containers in this task are granted the permissions that are
+     * specified in this role.</p>
+     */
+    inline void SetTaskRoleArn(const Aws::String& value) { m_taskRoleArnHasBeenSet = true; m_taskRoleArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM role that containers in this task
+     * can assume. All containers in this task are granted the permissions that are
+     * specified in this role.</p>
+     */
+    inline void SetTaskRoleArn(Aws::String&& value) { m_taskRoleArnHasBeenSet = true; m_taskRoleArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM role that containers in this task
+     * can assume. All containers in this task are granted the permissions that are
+     * specified in this role.</p>
+     */
+    inline void SetTaskRoleArn(const char* value) { m_taskRoleArnHasBeenSet = true; m_taskRoleArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM role that containers in this task
+     * can assume. All containers in this task are granted the permissions that are
+     * specified in this role.</p>
+     */
+    inline TaskDefinition& WithTaskRoleArn(const Aws::String& value) { SetTaskRoleArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM role that containers in this task
+     * can assume. All containers in this task are granted the permissions that are
+     * specified in this role.</p>
+     */
+    inline TaskDefinition& WithTaskRoleArn(Aws::String&& value) { SetTaskRoleArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM role that containers in this task
+     * can assume. All containers in this task are granted the permissions that are
+     * specified in this role.</p>
+     */
+    inline TaskDefinition& WithTaskRoleArn(const char* value) { SetTaskRoleArn(value); return *this;}
+
+    /**
+     * <p>The Docker networking mode to use for the containers in the task. The valid
+     * values are <code>none</code>, <code>bridge</code>, and <code>host</code>. </p>
+     * <p>If the network mode is <code>none</code>, the containers do not have external
+     * connectivity. The default Docker network mode is <code>bridge</code>. The
+     * <code>host</code> network mode offers the highest networking performance for
+     * containers because it uses the host network stack instead of the virtualized
+     * network stack provided by the <code>bridge</code> mode.</p> <p>For more
+     * information, see <a
+     * href="https://docs.docker.com/engine/reference/run/#network-settings">Network
+     * settings</a> in the <i>Docker run reference</i>.</p>
+     */
+    inline const NetworkMode& GetNetworkMode() const{ return m_networkMode; }
+
+    /**
+     * <p>The Docker networking mode to use for the containers in the task. The valid
+     * values are <code>none</code>, <code>bridge</code>, and <code>host</code>. </p>
+     * <p>If the network mode is <code>none</code>, the containers do not have external
+     * connectivity. The default Docker network mode is <code>bridge</code>. The
+     * <code>host</code> network mode offers the highest networking performance for
+     * containers because it uses the host network stack instead of the virtualized
+     * network stack provided by the <code>bridge</code> mode.</p> <p>For more
+     * information, see <a
+     * href="https://docs.docker.com/engine/reference/run/#network-settings">Network
+     * settings</a> in the <i>Docker run reference</i>.</p>
+     */
+    inline void SetNetworkMode(const NetworkMode& value) { m_networkModeHasBeenSet = true; m_networkMode = value; }
+
+    /**
+     * <p>The Docker networking mode to use for the containers in the task. The valid
+     * values are <code>none</code>, <code>bridge</code>, and <code>host</code>. </p>
+     * <p>If the network mode is <code>none</code>, the containers do not have external
+     * connectivity. The default Docker network mode is <code>bridge</code>. The
+     * <code>host</code> network mode offers the highest networking performance for
+     * containers because it uses the host network stack instead of the virtualized
+     * network stack provided by the <code>bridge</code> mode.</p> <p>For more
+     * information, see <a
+     * href="https://docs.docker.com/engine/reference/run/#network-settings">Network
+     * settings</a> in the <i>Docker run reference</i>.</p>
+     */
+    inline void SetNetworkMode(NetworkMode&& value) { m_networkModeHasBeenSet = true; m_networkMode = value; }
+
+    /**
+     * <p>The Docker networking mode to use for the containers in the task. The valid
+     * values are <code>none</code>, <code>bridge</code>, and <code>host</code>. </p>
+     * <p>If the network mode is <code>none</code>, the containers do not have external
+     * connectivity. The default Docker network mode is <code>bridge</code>. The
+     * <code>host</code> network mode offers the highest networking performance for
+     * containers because it uses the host network stack instead of the virtualized
+     * network stack provided by the <code>bridge</code> mode.</p> <p>For more
+     * information, see <a
+     * href="https://docs.docker.com/engine/reference/run/#network-settings">Network
+     * settings</a> in the <i>Docker run reference</i>.</p>
+     */
+    inline TaskDefinition& WithNetworkMode(const NetworkMode& value) { SetNetworkMode(value); return *this;}
+
+    /**
+     * <p>The Docker networking mode to use for the containers in the task. The valid
+     * values are <code>none</code>, <code>bridge</code>, and <code>host</code>. </p>
+     * <p>If the network mode is <code>none</code>, the containers do not have external
+     * connectivity. The default Docker network mode is <code>bridge</code>. The
+     * <code>host</code> network mode offers the highest networking performance for
+     * containers because it uses the host network stack instead of the virtualized
+     * network stack provided by the <code>bridge</code> mode.</p> <p>For more
+     * information, see <a
+     * href="https://docs.docker.com/engine/reference/run/#network-settings">Network
+     * settings</a> in the <i>Docker run reference</i>.</p>
+     */
+    inline TaskDefinition& WithNetworkMode(NetworkMode&& value) { SetNetworkMode(value); return *this;}
 
     /**
      * <p>The revision of the task in a particular family. The revision is a version
@@ -204,7 +314,7 @@ namespace Model
      * increases by one (even if you have deregistered previous revisions in this
      * family).</p>
      */
-    inline void SetRevision(long value) { m_revisionHasBeenSet = true; m_revision = value; }
+    inline int GetRevision() const{ return m_revision; }
 
     /**
      * <p>The revision of the task in a particular family. The revision is a version
@@ -214,12 +324,22 @@ namespace Model
      * increases by one (even if you have deregistered previous revisions in this
      * family).</p>
      */
-    inline TaskDefinition& WithRevision(long value) { SetRevision(value); return *this;}
+    inline void SetRevision(int value) { m_revisionHasBeenSet = true; m_revision = value; }
+
+    /**
+     * <p>The revision of the task in a particular family. The revision is a version
+     * number of a task definition in a family. When you register a task definition for
+     * the first time, the revision is <code>1</code>; each time you register a new
+     * revision of a task definition in the same family, the revision value always
+     * increases by one (even if you have deregistered previous revisions in this
+     * family).</p>
+     */
+    inline TaskDefinition& WithRevision(int value) { SetRevision(value); return *this;}
 
     /**
      * <p>The list of volumes in a task. For more information about volume definition
      * parameters and defaults, see <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AmazonECS/latest/developerguidetask_defintions.html">Amazon
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon
      * ECS Task Definitions</a> in the <i>Amazon EC2 Container Service Developer
      * Guide</i>.</p>
      */
@@ -228,7 +348,7 @@ namespace Model
     /**
      * <p>The list of volumes in a task. For more information about volume definition
      * parameters and defaults, see <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AmazonECS/latest/developerguidetask_defintions.html">Amazon
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon
      * ECS Task Definitions</a> in the <i>Amazon EC2 Container Service Developer
      * Guide</i>.</p>
      */
@@ -237,7 +357,7 @@ namespace Model
     /**
      * <p>The list of volumes in a task. For more information about volume definition
      * parameters and defaults, see <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AmazonECS/latest/developerguidetask_defintions.html">Amazon
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon
      * ECS Task Definitions</a> in the <i>Amazon EC2 Container Service Developer
      * Guide</i>.</p>
      */
@@ -246,7 +366,7 @@ namespace Model
     /**
      * <p>The list of volumes in a task. For more information about volume definition
      * parameters and defaults, see <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AmazonECS/latest/developerguidetask_defintions.html">Amazon
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon
      * ECS Task Definitions</a> in the <i>Amazon EC2 Container Service Developer
      * Guide</i>.</p>
      */
@@ -255,7 +375,7 @@ namespace Model
     /**
      * <p>The list of volumes in a task. For more information about volume definition
      * parameters and defaults, see <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AmazonECS/latest/developerguidetask_defintions.html">Amazon
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon
      * ECS Task Definitions</a> in the <i>Amazon EC2 Container Service Developer
      * Guide</i>.</p>
      */
@@ -264,7 +384,7 @@ namespace Model
     /**
      * <p>The list of volumes in a task. For more information about volume definition
      * parameters and defaults, see <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AmazonECS/latest/developerguidetask_defintions.html">Amazon
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon
      * ECS Task Definitions</a> in the <i>Amazon EC2 Container Service Developer
      * Guide</i>.</p>
      */
@@ -273,7 +393,7 @@ namespace Model
     /**
      * <p>The list of volumes in a task. For more information about volume definition
      * parameters and defaults, see <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AmazonECS/latest/developerguidetask_defintions.html">Amazon
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon
      * ECS Task Definitions</a> in the <i>Amazon EC2 Container Service Developer
      * Guide</i>.</p>
      */
@@ -346,7 +466,11 @@ namespace Model
     bool m_containerDefinitionsHasBeenSet;
     Aws::String m_family;
     bool m_familyHasBeenSet;
-    long m_revision;
+    Aws::String m_taskRoleArn;
+    bool m_taskRoleArnHasBeenSet;
+    NetworkMode m_networkMode;
+    bool m_networkModeHasBeenSet;
+    int m_revision;
     bool m_revisionHasBeenSet;
     Aws::Vector<Volume> m_volumes;
     bool m_volumesHasBeenSet;

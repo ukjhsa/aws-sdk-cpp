@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -242,17 +242,17 @@ namespace Model
     /**
      * <p>Specifies the allocated storage size in gigabytes (GB).</p>
      */
-    inline long GetAllocatedStorage() const{ return m_allocatedStorage; }
+    inline int GetAllocatedStorage() const{ return m_allocatedStorage; }
 
     /**
      * <p>Specifies the allocated storage size in gigabytes (GB).</p>
      */
-    inline void SetAllocatedStorage(long value) { m_allocatedStorageHasBeenSet = true; m_allocatedStorage = value; }
+    inline void SetAllocatedStorage(int value) { m_allocatedStorageHasBeenSet = true; m_allocatedStorage = value; }
 
     /**
      * <p>Specifies the allocated storage size in gigabytes (GB).</p>
      */
-    inline DBClusterSnapshot& WithAllocatedStorage(long value) { SetAllocatedStorage(value); return *this;}
+    inline DBClusterSnapshot& WithAllocatedStorage(int value) { SetAllocatedStorage(value); return *this;}
 
     /**
      * <p>Specifies the status of this DB cluster snapshot.</p>
@@ -293,19 +293,19 @@ namespace Model
      * <p>Specifies the port that the DB cluster was listening on at the time of the
      * snapshot.</p>
      */
-    inline long GetPort() const{ return m_port; }
+    inline int GetPort() const{ return m_port; }
 
     /**
      * <p>Specifies the port that the DB cluster was listening on at the time of the
      * snapshot.</p>
      */
-    inline void SetPort(long value) { m_portHasBeenSet = true; m_port = value; }
+    inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
 
     /**
      * <p>Specifies the port that the DB cluster was listening on at the time of the
      * snapshot.</p>
      */
-    inline DBClusterSnapshot& WithPort(long value) { SetPort(value); return *this;}
+    inline DBClusterSnapshot& WithPort(int value) { SetPort(value); return *this;}
 
     /**
      * <p>Provides the VPC ID associated with the DB cluster snapshot.</p>
@@ -515,17 +515,17 @@ namespace Model
     /**
      * <p>Specifies the percentage of the estimated data that has been transferred.</p>
      */
-    inline long GetPercentProgress() const{ return m_percentProgress; }
+    inline int GetPercentProgress() const{ return m_percentProgress; }
 
     /**
      * <p>Specifies the percentage of the estimated data that has been transferred.</p>
      */
-    inline void SetPercentProgress(long value) { m_percentProgressHasBeenSet = true; m_percentProgress = value; }
+    inline void SetPercentProgress(int value) { m_percentProgressHasBeenSet = true; m_percentProgress = value; }
 
     /**
      * <p>Specifies the percentage of the estimated data that has been transferred.</p>
      */
-    inline DBClusterSnapshot& WithPercentProgress(long value) { SetPercentProgress(value); return *this;}
+    inline DBClusterSnapshot& WithPercentProgress(int value) { SetPercentProgress(value); return *this;}
 
     /**
      * <p>Specifies whether the DB cluster snapshot is encrypted.</p>
@@ -584,6 +584,41 @@ namespace Model
      */
     inline DBClusterSnapshot& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
+    /**
+     * <p>The Amazon Resource Name (ARN) for the DB cluster snapshot.</p>
+     */
+    inline const Aws::String& GetDBClusterSnapshotArn() const{ return m_dBClusterSnapshotArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the DB cluster snapshot.</p>
+     */
+    inline void SetDBClusterSnapshotArn(const Aws::String& value) { m_dBClusterSnapshotArnHasBeenSet = true; m_dBClusterSnapshotArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the DB cluster snapshot.</p>
+     */
+    inline void SetDBClusterSnapshotArn(Aws::String&& value) { m_dBClusterSnapshotArnHasBeenSet = true; m_dBClusterSnapshotArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the DB cluster snapshot.</p>
+     */
+    inline void SetDBClusterSnapshotArn(const char* value) { m_dBClusterSnapshotArnHasBeenSet = true; m_dBClusterSnapshotArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the DB cluster snapshot.</p>
+     */
+    inline DBClusterSnapshot& WithDBClusterSnapshotArn(const Aws::String& value) { SetDBClusterSnapshotArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the DB cluster snapshot.</p>
+     */
+    inline DBClusterSnapshot& WithDBClusterSnapshotArn(Aws::String&& value) { SetDBClusterSnapshotArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the DB cluster snapshot.</p>
+     */
+    inline DBClusterSnapshot& WithDBClusterSnapshotArn(const char* value) { SetDBClusterSnapshotArn(value); return *this;}
+
   private:
     Aws::Vector<Aws::String> m_availabilityZones;
     bool m_availabilityZonesHasBeenSet;
@@ -595,11 +630,11 @@ namespace Model
     bool m_snapshotCreateTimeHasBeenSet;
     Aws::String m_engine;
     bool m_engineHasBeenSet;
-    long m_allocatedStorage;
+    int m_allocatedStorage;
     bool m_allocatedStorageHasBeenSet;
     Aws::String m_status;
     bool m_statusHasBeenSet;
-    long m_port;
+    int m_port;
     bool m_portHasBeenSet;
     Aws::String m_vpcId;
     bool m_vpcIdHasBeenSet;
@@ -613,12 +648,14 @@ namespace Model
     bool m_licenseModelHasBeenSet;
     Aws::String m_snapshotType;
     bool m_snapshotTypeHasBeenSet;
-    long m_percentProgress;
+    int m_percentProgress;
     bool m_percentProgressHasBeenSet;
     bool m_storageEncrypted;
     bool m_storageEncryptedHasBeenSet;
     Aws::String m_kmsKeyId;
     bool m_kmsKeyIdHasBeenSet;
+    Aws::String m_dBClusterSnapshotArn;
+    bool m_dBClusterSnapshotArnHasBeenSet;
   };
 
 } // namespace Model

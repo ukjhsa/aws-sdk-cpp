@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -29,7 +29,8 @@ UpdateIdentityPoolRequest::UpdateIdentityPoolRequest() :
     m_supportedLoginProvidersHasBeenSet(false),
     m_developerProviderNameHasBeenSet(false),
     m_openIdConnectProviderARNsHasBeenSet(false),
-    m_cognitoIdentityProvidersHasBeenSet(false)
+    m_cognitoIdentityProvidersHasBeenSet(false),
+    m_samlProviderARNsHasBeenSet(false)
 {
 }
 
@@ -91,6 +92,17 @@ Aws::String UpdateIdentityPoolRequest::SerializePayload() const
      cognitoIdentityProvidersJsonList[cognitoIdentityProvidersIndex].AsObject(m_cognitoIdentityProviders[cognitoIdentityProvidersIndex].Jsonize());
    }
    payload.WithArray("CognitoIdentityProviders", std::move(cognitoIdentityProvidersJsonList));
+
+  }
+
+  if(m_samlProviderARNsHasBeenSet)
+  {
+   Array<JsonValue> samlProviderARNsJsonList(m_samlProviderARNs.size());
+   for(unsigned samlProviderARNsIndex = 0; samlProviderARNsIndex < samlProviderARNsJsonList.GetLength(); ++samlProviderARNsIndex)
+   {
+     samlProviderARNsJsonList[samlProviderARNsIndex].AsString(m_samlProviderARNs[samlProviderARNsIndex]);
+   }
+   payload.WithArray("SamlProviderARNs", std::move(samlProviderARNsJsonList));
 
   }
 

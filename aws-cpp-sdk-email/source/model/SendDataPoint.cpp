@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -103,22 +103,27 @@ void SendDataPoint::OutputToStream(Aws::OStream& oStream, const char* location, 
   {
       oStream << location << index << locationValue << ".Timestamp=" << StringUtils::URLEncode(m_timestamp.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
   if(m_deliveryAttemptsHasBeenSet)
   {
       oStream << location << index << locationValue << ".DeliveryAttempts=" << m_deliveryAttempts << "&";
   }
+
   if(m_bouncesHasBeenSet)
   {
       oStream << location << index << locationValue << ".Bounces=" << m_bounces << "&";
   }
+
   if(m_complaintsHasBeenSet)
   {
       oStream << location << index << locationValue << ".Complaints=" << m_complaints << "&";
   }
+
   if(m_rejectsHasBeenSet)
   {
       oStream << location << index << locationValue << ".Rejects=" << m_rejects << "&";
   }
+
 }
 
 void SendDataPoint::OutputToStream(Aws::OStream& oStream, const char* location) const

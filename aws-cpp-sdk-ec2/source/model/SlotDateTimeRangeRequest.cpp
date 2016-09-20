@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -71,10 +71,12 @@ void SlotDateTimeRangeRequest::OutputToStream(Aws::OStream& oStream, const char*
   {
       oStream << location << index << locationValue << ".EarliestTime=" << StringUtils::URLEncode(m_earliestTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
   if(m_latestTimeHasBeenSet)
   {
       oStream << location << index << locationValue << ".LatestTime=" << StringUtils::URLEncode(m_latestTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
 }
 
 void SlotDateTimeRangeRequest::OutputToStream(Aws::OStream& oStream, const char* location) const

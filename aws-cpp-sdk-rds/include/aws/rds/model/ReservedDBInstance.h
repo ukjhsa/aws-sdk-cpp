@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -182,17 +182,17 @@ namespace Model
     /**
      * <p>The duration of the reservation in seconds.</p>
      */
-    inline long GetDuration() const{ return m_duration; }
+    inline int GetDuration() const{ return m_duration; }
 
     /**
      * <p>The duration of the reservation in seconds.</p>
      */
-    inline void SetDuration(long value) { m_durationHasBeenSet = true; m_duration = value; }
+    inline void SetDuration(int value) { m_durationHasBeenSet = true; m_duration = value; }
 
     /**
      * <p>The duration of the reservation in seconds.</p>
      */
-    inline ReservedDBInstance& WithDuration(long value) { SetDuration(value); return *this;}
+    inline ReservedDBInstance& WithDuration(int value) { SetDuration(value); return *this;}
 
     /**
      * <p>The fixed price charged for this reserved DB instance.</p>
@@ -262,17 +262,17 @@ namespace Model
     /**
      * <p>The number of reserved DB instances.</p>
      */
-    inline long GetDBInstanceCount() const{ return m_dBInstanceCount; }
+    inline int GetDBInstanceCount() const{ return m_dBInstanceCount; }
 
     /**
      * <p>The number of reserved DB instances.</p>
      */
-    inline void SetDBInstanceCount(long value) { m_dBInstanceCountHasBeenSet = true; m_dBInstanceCount = value; }
+    inline void SetDBInstanceCount(int value) { m_dBInstanceCountHasBeenSet = true; m_dBInstanceCount = value; }
 
     /**
      * <p>The number of reserved DB instances.</p>
      */
-    inline ReservedDBInstance& WithDBInstanceCount(long value) { SetDBInstanceCount(value); return *this;}
+    inline ReservedDBInstance& WithDBInstanceCount(int value) { SetDBInstanceCount(value); return *this;}
 
     /**
      * <p>The description of the reserved DB instance.</p>
@@ -429,6 +429,41 @@ namespace Model
      */
     inline ReservedDBInstance& AddRecurringCharges(RecurringCharge&& value) { m_recurringChargesHasBeenSet = true; m_recurringCharges.push_back(value); return *this; }
 
+    /**
+     * <p>The Amazon Resource Name (ARN) for the reserved DB instance.</p>
+     */
+    inline const Aws::String& GetReservedDBInstanceArn() const{ return m_reservedDBInstanceArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the reserved DB instance.</p>
+     */
+    inline void SetReservedDBInstanceArn(const Aws::String& value) { m_reservedDBInstanceArnHasBeenSet = true; m_reservedDBInstanceArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the reserved DB instance.</p>
+     */
+    inline void SetReservedDBInstanceArn(Aws::String&& value) { m_reservedDBInstanceArnHasBeenSet = true; m_reservedDBInstanceArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the reserved DB instance.</p>
+     */
+    inline void SetReservedDBInstanceArn(const char* value) { m_reservedDBInstanceArnHasBeenSet = true; m_reservedDBInstanceArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the reserved DB instance.</p>
+     */
+    inline ReservedDBInstance& WithReservedDBInstanceArn(const Aws::String& value) { SetReservedDBInstanceArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the reserved DB instance.</p>
+     */
+    inline ReservedDBInstance& WithReservedDBInstanceArn(Aws::String&& value) { SetReservedDBInstanceArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the reserved DB instance.</p>
+     */
+    inline ReservedDBInstance& WithReservedDBInstanceArn(const char* value) { SetReservedDBInstanceArn(value); return *this;}
+
   private:
     Aws::String m_reservedDBInstanceId;
     bool m_reservedDBInstanceIdHasBeenSet;
@@ -438,7 +473,7 @@ namespace Model
     bool m_dBInstanceClassHasBeenSet;
     Aws::Utils::DateTime m_startTime;
     bool m_startTimeHasBeenSet;
-    long m_duration;
+    int m_duration;
     bool m_durationHasBeenSet;
     double m_fixedPrice;
     bool m_fixedPriceHasBeenSet;
@@ -446,7 +481,7 @@ namespace Model
     bool m_usagePriceHasBeenSet;
     Aws::String m_currencyCode;
     bool m_currencyCodeHasBeenSet;
-    long m_dBInstanceCount;
+    int m_dBInstanceCount;
     bool m_dBInstanceCountHasBeenSet;
     Aws::String m_productDescription;
     bool m_productDescriptionHasBeenSet;
@@ -458,6 +493,8 @@ namespace Model
     bool m_stateHasBeenSet;
     Aws::Vector<RecurringCharge> m_recurringCharges;
     bool m_recurringChargesHasBeenSet;
+    Aws::String m_reservedDBInstanceArn;
+    bool m_reservedDBInstanceArnHasBeenSet;
   };
 
 } // namespace Model

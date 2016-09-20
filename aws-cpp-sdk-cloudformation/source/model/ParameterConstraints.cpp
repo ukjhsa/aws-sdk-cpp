@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -73,6 +73,7 @@ void ParameterConstraints::OutputToStream(Aws::OStream& oStream, const char* loc
         oStream << location << index << locationValue << ".AllowedValues.member." << allowedValuesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
+
 }
 
 void ParameterConstraints::OutputToStream(Aws::OStream& oStream, const char* location) const

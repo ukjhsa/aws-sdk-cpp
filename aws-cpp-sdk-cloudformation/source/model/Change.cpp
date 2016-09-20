@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -71,12 +71,14 @@ void Change::OutputToStream(Aws::OStream& oStream, const char* location, unsigne
   {
       oStream << location << index << locationValue << ".Type=" << ChangeTypeMapper::GetNameForChangeType(m_type) << "&";
   }
+
   if(m_resourceChangeHasBeenSet)
   {
       Aws::StringStream resourceChangeLocationAndMemberSs;
       resourceChangeLocationAndMemberSs << location << index << locationValue << ".ResourceChange";
       m_resourceChange.OutputToStream(oStream, resourceChangeLocationAndMemberSs.str().c_str());
   }
+
 }
 
 void Change::OutputToStream(Aws::OStream& oStream, const char* location) const

@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -43,6 +43,7 @@ AutoScalingGroup::AutoScalingGroup() :
     m_defaultCooldownHasBeenSet(false),
     m_availabilityZonesHasBeenSet(false),
     m_loadBalancerNamesHasBeenSet(false),
+    m_targetGroupARNsHasBeenSet(false),
     m_healthCheckTypeHasBeenSet(false),
     m_healthCheckGracePeriod(0),
     m_healthCheckGracePeriodHasBeenSet(false),
@@ -74,6 +75,7 @@ AutoScalingGroup::AutoScalingGroup(const XmlNode& xmlNode) :
     m_defaultCooldownHasBeenSet(false),
     m_availabilityZonesHasBeenSet(false),
     m_loadBalancerNamesHasBeenSet(false),
+    m_targetGroupARNsHasBeenSet(false),
     m_healthCheckTypeHasBeenSet(false),
     m_healthCheckGracePeriod(0),
     m_healthCheckGracePeriodHasBeenSet(false),
@@ -163,6 +165,18 @@ AutoScalingGroup& AutoScalingGroup::operator =(const XmlNode& xmlNode)
       }
 
       m_loadBalancerNamesHasBeenSet = true;
+    }
+    XmlNode targetGroupARNsNode = resultNode.FirstChild("TargetGroupARNs");
+    if(!targetGroupARNsNode.IsNull())
+    {
+      XmlNode targetGroupARNsMember = targetGroupARNsNode.FirstChild("member");
+      while(!targetGroupARNsMember.IsNull())
+      {
+        m_targetGroupARNs.push_back(StringUtils::Trim(targetGroupARNsMember.GetText().c_str()));
+        targetGroupARNsMember = targetGroupARNsMember.NextNode("member");
+      }
+
+      m_targetGroupARNsHasBeenSet = true;
     }
     XmlNode healthCheckTypeNode = resultNode.FirstChild("HealthCheckType");
     if(!healthCheckTypeNode.IsNull())
@@ -277,30 +291,37 @@ void AutoScalingGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
   {
       oStream << location << index << locationValue << ".AutoScalingGroupName=" << StringUtils::URLEncode(m_autoScalingGroupName.c_str()) << "&";
   }
+
   if(m_autoScalingGroupARNHasBeenSet)
   {
       oStream << location << index << locationValue << ".AutoScalingGroupARN=" << StringUtils::URLEncode(m_autoScalingGroupARN.c_str()) << "&";
   }
+
   if(m_launchConfigurationNameHasBeenSet)
   {
       oStream << location << index << locationValue << ".LaunchConfigurationName=" << StringUtils::URLEncode(m_launchConfigurationName.c_str()) << "&";
   }
+
   if(m_minSizeHasBeenSet)
   {
       oStream << location << index << locationValue << ".MinSize=" << m_minSize << "&";
   }
+
   if(m_maxSizeHasBeenSet)
   {
       oStream << location << index << locationValue << ".MaxSize=" << m_maxSize << "&";
   }
+
   if(m_desiredCapacityHasBeenSet)
   {
       oStream << location << index << locationValue << ".DesiredCapacity=" << m_desiredCapacity << "&";
   }
+
   if(m_defaultCooldownHasBeenSet)
   {
       oStream << location << index << locationValue << ".DefaultCooldown=" << m_defaultCooldown << "&";
   }
+
   if(m_availabilityZonesHasBeenSet)
   {
       unsigned availabilityZonesIdx = 1;
@@ -309,6 +330,7 @@ void AutoScalingGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
         oStream << location << index << locationValue << ".AvailabilityZones.member." << availabilityZonesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
+
   if(m_loadBalancerNamesHasBeenSet)
   {
       unsigned loadBalancerNamesIdx = 1;
@@ -317,14 +339,26 @@ void AutoScalingGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
         oStream << location << index << locationValue << ".LoadBalancerNames.member." << loadBalancerNamesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
+
+  if(m_targetGroupARNsHasBeenSet)
+  {
+      unsigned targetGroupARNsIdx = 1;
+      for(auto& item : m_targetGroupARNs)
+      {
+        oStream << location << index << locationValue << ".TargetGroupARNs.member." << targetGroupARNsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
+  }
+
   if(m_healthCheckTypeHasBeenSet)
   {
       oStream << location << index << locationValue << ".HealthCheckType=" << StringUtils::URLEncode(m_healthCheckType.c_str()) << "&";
   }
+
   if(m_healthCheckGracePeriodHasBeenSet)
   {
       oStream << location << index << locationValue << ".HealthCheckGracePeriod=" << m_healthCheckGracePeriod << "&";
   }
+
   if(m_instancesHasBeenSet)
   {
       unsigned instancesIdx = 1;
@@ -335,10 +369,12 @@ void AutoScalingGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
         item.OutputToStream(oStream, instancesSs.str().c_str());
       }
   }
+
   if(m_createdTimeHasBeenSet)
   {
       oStream << location << index << locationValue << ".CreatedTime=" << StringUtils::URLEncode(m_createdTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+
   if(m_suspendedProcessesHasBeenSet)
   {
       unsigned suspendedProcessesIdx = 1;
@@ -349,14 +385,17 @@ void AutoScalingGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
         item.OutputToStream(oStream, suspendedProcessesSs.str().c_str());
       }
   }
+
   if(m_placementGroupHasBeenSet)
   {
       oStream << location << index << locationValue << ".PlacementGroup=" << StringUtils::URLEncode(m_placementGroup.c_str()) << "&";
   }
+
   if(m_vPCZoneIdentifierHasBeenSet)
   {
       oStream << location << index << locationValue << ".VPCZoneIdentifier=" << StringUtils::URLEncode(m_vPCZoneIdentifier.c_str()) << "&";
   }
+
   if(m_enabledMetricsHasBeenSet)
   {
       unsigned enabledMetricsIdx = 1;
@@ -367,10 +406,12 @@ void AutoScalingGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
         item.OutputToStream(oStream, enabledMetricsSs.str().c_str());
       }
   }
+
   if(m_statusHasBeenSet)
   {
       oStream << location << index << locationValue << ".Status=" << StringUtils::URLEncode(m_status.c_str()) << "&";
   }
+
   if(m_tagsHasBeenSet)
   {
       unsigned tagsIdx = 1;
@@ -381,6 +422,7 @@ void AutoScalingGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }
+
   if(m_terminationPoliciesHasBeenSet)
   {
       unsigned terminationPoliciesIdx = 1;
@@ -389,10 +431,12 @@ void AutoScalingGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
         oStream << location << index << locationValue << ".TerminationPolicies.member." << terminationPoliciesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
+
   if(m_newInstancesProtectedFromScaleInHasBeenSet)
   {
       oStream << location << index << locationValue << ".NewInstancesProtectedFromScaleIn=" << m_newInstancesProtectedFromScaleIn << "&";
   }
+
 }
 
 void AutoScalingGroup::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -439,6 +483,14 @@ void AutoScalingGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
       for(auto& item : m_loadBalancerNames)
       {
         oStream << location << ".LoadBalancerNames.member." << loadBalancerNamesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
+  }
+  if(m_targetGroupARNsHasBeenSet)
+  {
+      unsigned targetGroupARNsIdx = 1;
+      for(auto& item : m_targetGroupARNs)
+      {
+        oStream << location << ".TargetGroupARNs.member." << targetGroupARNsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
   if(m_healthCheckTypeHasBeenSet)

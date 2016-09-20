@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -63,6 +63,7 @@ void OpenIDConnectProviderListEntry::OutputToStream(Aws::OStream& oStream, const
   {
       oStream << location << index << locationValue << ".Arn=" << StringUtils::URLEncode(m_arn.c_str()) << "&";
   }
+
 }
 
 void OpenIDConnectProviderListEntry::OutputToStream(Aws::OStream& oStream, const char* location) const

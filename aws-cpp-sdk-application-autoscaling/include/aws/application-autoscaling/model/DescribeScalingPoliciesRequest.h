@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -119,64 +119,85 @@ namespace Model
 
     /**
      * <p>The unique resource identifier string of the scalable target that the scaling
-     * policy is associated with. For Amazon ECS services, this value is the resource
-     * type, followed by the cluster name and service name, such as
-     * <code>service/default/sample-webapp</code>. If you specify a scalable dimension,
-     * you must also specify a resource ID.</p>
+     * policy is associated with. For Amazon ECS services, the resource type is
+     * <code>services</code>, and the identifier is the cluster name and service name;
+     * for example, <code>service/default/sample-webapp</code>. For Amazon EC2 Spot
+     * fleet requests, the resource type is <code>spot-fleet-request</code>, and the
+     * identifier is the Spot fleet request ID; for example,
+     * <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>. If you
+     * specify a scalable dimension, you must also specify a resource ID.</p>
      */
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
 
     /**
      * <p>The unique resource identifier string of the scalable target that the scaling
-     * policy is associated with. For Amazon ECS services, this value is the resource
-     * type, followed by the cluster name and service name, such as
-     * <code>service/default/sample-webapp</code>. If you specify a scalable dimension,
-     * you must also specify a resource ID.</p>
+     * policy is associated with. For Amazon ECS services, the resource type is
+     * <code>services</code>, and the identifier is the cluster name and service name;
+     * for example, <code>service/default/sample-webapp</code>. For Amazon EC2 Spot
+     * fleet requests, the resource type is <code>spot-fleet-request</code>, and the
+     * identifier is the Spot fleet request ID; for example,
+     * <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>. If you
+     * specify a scalable dimension, you must also specify a resource ID.</p>
      */
     inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
 
     /**
      * <p>The unique resource identifier string of the scalable target that the scaling
-     * policy is associated with. For Amazon ECS services, this value is the resource
-     * type, followed by the cluster name and service name, such as
-     * <code>service/default/sample-webapp</code>. If you specify a scalable dimension,
-     * you must also specify a resource ID.</p>
+     * policy is associated with. For Amazon ECS services, the resource type is
+     * <code>services</code>, and the identifier is the cluster name and service name;
+     * for example, <code>service/default/sample-webapp</code>. For Amazon EC2 Spot
+     * fleet requests, the resource type is <code>spot-fleet-request</code>, and the
+     * identifier is the Spot fleet request ID; for example,
+     * <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>. If you
+     * specify a scalable dimension, you must also specify a resource ID.</p>
      */
     inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
 
     /**
      * <p>The unique resource identifier string of the scalable target that the scaling
-     * policy is associated with. For Amazon ECS services, this value is the resource
-     * type, followed by the cluster name and service name, such as
-     * <code>service/default/sample-webapp</code>. If you specify a scalable dimension,
-     * you must also specify a resource ID.</p>
+     * policy is associated with. For Amazon ECS services, the resource type is
+     * <code>services</code>, and the identifier is the cluster name and service name;
+     * for example, <code>service/default/sample-webapp</code>. For Amazon EC2 Spot
+     * fleet requests, the resource type is <code>spot-fleet-request</code>, and the
+     * identifier is the Spot fleet request ID; for example,
+     * <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>. If you
+     * specify a scalable dimension, you must also specify a resource ID.</p>
      */
     inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
 
     /**
      * <p>The unique resource identifier string of the scalable target that the scaling
-     * policy is associated with. For Amazon ECS services, this value is the resource
-     * type, followed by the cluster name and service name, such as
-     * <code>service/default/sample-webapp</code>. If you specify a scalable dimension,
-     * you must also specify a resource ID.</p>
+     * policy is associated with. For Amazon ECS services, the resource type is
+     * <code>services</code>, and the identifier is the cluster name and service name;
+     * for example, <code>service/default/sample-webapp</code>. For Amazon EC2 Spot
+     * fleet requests, the resource type is <code>spot-fleet-request</code>, and the
+     * identifier is the Spot fleet request ID; for example,
+     * <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>. If you
+     * specify a scalable dimension, you must also specify a resource ID.</p>
      */
     inline DescribeScalingPoliciesRequest& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
 
     /**
      * <p>The unique resource identifier string of the scalable target that the scaling
-     * policy is associated with. For Amazon ECS services, this value is the resource
-     * type, followed by the cluster name and service name, such as
-     * <code>service/default/sample-webapp</code>. If you specify a scalable dimension,
-     * you must also specify a resource ID.</p>
+     * policy is associated with. For Amazon ECS services, the resource type is
+     * <code>services</code>, and the identifier is the cluster name and service name;
+     * for example, <code>service/default/sample-webapp</code>. For Amazon EC2 Spot
+     * fleet requests, the resource type is <code>spot-fleet-request</code>, and the
+     * identifier is the Spot fleet request ID; for example,
+     * <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>. If you
+     * specify a scalable dimension, you must also specify a resource ID.</p>
      */
     inline DescribeScalingPoliciesRequest& WithResourceId(Aws::String&& value) { SetResourceId(value); return *this;}
 
     /**
      * <p>The unique resource identifier string of the scalable target that the scaling
-     * policy is associated with. For Amazon ECS services, this value is the resource
-     * type, followed by the cluster name and service name, such as
-     * <code>service/default/sample-webapp</code>. If you specify a scalable dimension,
-     * you must also specify a resource ID.</p>
+     * policy is associated with. For Amazon ECS services, the resource type is
+     * <code>services</code>, and the identifier is the cluster name and service name;
+     * for example, <code>service/default/sample-webapp</code>. For Amazon EC2 Spot
+     * fleet requests, the resource type is <code>spot-fleet-request</code>, and the
+     * identifier is the Spot fleet request ID; for example,
+     * <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>. If you
+     * specify a scalable dimension, you must also specify a resource ID.</p>
      */
     inline DescribeScalingPoliciesRequest& WithResourceId(const char* value) { SetResourceId(value); return *this;}
 
@@ -184,8 +205,10 @@ namespace Model
      * <p>The scalable dimension of the scalable target that the scaling policy is
      * associated with. The scalable dimension contains the service namespace, resource
      * type, and scaling property, such as <code>ecs:service:DesiredCount</code> for
-     * the desired task count of an Amazon ECS service. If you specify a scalable
-     * dimension, you must also specify a resource ID.</p>
+     * the desired task count of an Amazon ECS service, or
+     * <code>ec2:spot-fleet-request:TargetCapacity</code> for the target capacity of an
+     * Amazon EC2 Spot fleet request. If you specify a scalable dimension, you must
+     * also specify a resource ID.</p>
      */
     inline const ScalableDimension& GetScalableDimension() const{ return m_scalableDimension; }
 
@@ -193,8 +216,10 @@ namespace Model
      * <p>The scalable dimension of the scalable target that the scaling policy is
      * associated with. The scalable dimension contains the service namespace, resource
      * type, and scaling property, such as <code>ecs:service:DesiredCount</code> for
-     * the desired task count of an Amazon ECS service. If you specify a scalable
-     * dimension, you must also specify a resource ID.</p>
+     * the desired task count of an Amazon ECS service, or
+     * <code>ec2:spot-fleet-request:TargetCapacity</code> for the target capacity of an
+     * Amazon EC2 Spot fleet request. If you specify a scalable dimension, you must
+     * also specify a resource ID.</p>
      */
     inline void SetScalableDimension(const ScalableDimension& value) { m_scalableDimensionHasBeenSet = true; m_scalableDimension = value; }
 
@@ -202,8 +227,10 @@ namespace Model
      * <p>The scalable dimension of the scalable target that the scaling policy is
      * associated with. The scalable dimension contains the service namespace, resource
      * type, and scaling property, such as <code>ecs:service:DesiredCount</code> for
-     * the desired task count of an Amazon ECS service. If you specify a scalable
-     * dimension, you must also specify a resource ID.</p>
+     * the desired task count of an Amazon ECS service, or
+     * <code>ec2:spot-fleet-request:TargetCapacity</code> for the target capacity of an
+     * Amazon EC2 Spot fleet request. If you specify a scalable dimension, you must
+     * also specify a resource ID.</p>
      */
     inline void SetScalableDimension(ScalableDimension&& value) { m_scalableDimensionHasBeenSet = true; m_scalableDimension = value; }
 
@@ -211,8 +238,10 @@ namespace Model
      * <p>The scalable dimension of the scalable target that the scaling policy is
      * associated with. The scalable dimension contains the service namespace, resource
      * type, and scaling property, such as <code>ecs:service:DesiredCount</code> for
-     * the desired task count of an Amazon ECS service. If you specify a scalable
-     * dimension, you must also specify a resource ID.</p>
+     * the desired task count of an Amazon ECS service, or
+     * <code>ec2:spot-fleet-request:TargetCapacity</code> for the target capacity of an
+     * Amazon EC2 Spot fleet request. If you specify a scalable dimension, you must
+     * also specify a resource ID.</p>
      */
     inline DescribeScalingPoliciesRequest& WithScalableDimension(const ScalableDimension& value) { SetScalableDimension(value); return *this;}
 
@@ -220,8 +249,10 @@ namespace Model
      * <p>The scalable dimension of the scalable target that the scaling policy is
      * associated with. The scalable dimension contains the service namespace, resource
      * type, and scaling property, such as <code>ecs:service:DesiredCount</code> for
-     * the desired task count of an Amazon ECS service. If you specify a scalable
-     * dimension, you must also specify a resource ID.</p>
+     * the desired task count of an Amazon ECS service, or
+     * <code>ec2:spot-fleet-request:TargetCapacity</code> for the target capacity of an
+     * Amazon EC2 Spot fleet request. If you specify a scalable dimension, you must
+     * also specify a resource ID.</p>
      */
     inline DescribeScalingPoliciesRequest& WithScalableDimension(ScalableDimension&& value) { SetScalableDimension(value); return *this;}
 
@@ -236,7 +267,7 @@ namespace Model
      * parameter is not used, then <code>DescribeScalingPolicies</code> returns up to
      * 50 results and a <code>NextToken</code> value, if applicable.</p>
      */
-    inline long GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
      * <p>The maximum number of scaling policy results returned by
@@ -249,7 +280,7 @@ namespace Model
      * parameter is not used, then <code>DescribeScalingPolicies</code> returns up to
      * 50 results and a <code>NextToken</code> value, if applicable.</p>
      */
-    inline void SetMaxResults(long value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
      * <p>The maximum number of scaling policy results returned by
@@ -262,7 +293,7 @@ namespace Model
      * parameter is not used, then <code>DescribeScalingPolicies</code> returns up to
      * 50 results and a <code>NextToken</code> value, if applicable.</p>
      */
-    inline DescribeScalingPoliciesRequest& WithMaxResults(long value) { SetMaxResults(value); return *this;}
+    inline DescribeScalingPoliciesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
     /**
      * <p>The <code>NextToken</code> value returned from a previous paginated
@@ -329,7 +360,7 @@ namespace Model
     bool m_resourceIdHasBeenSet;
     ScalableDimension m_scalableDimension;
     bool m_scalableDimensionHasBeenSet;
-    long m_maxResults;
+    int m_maxResults;
     bool m_maxResultsHasBeenSet;
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;

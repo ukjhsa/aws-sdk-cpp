@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -71,10 +71,12 @@ void IdentityVerificationAttributes::OutputToStream(Aws::OStream& oStream, const
   {
       oStream << location << index << locationValue << ".VerificationStatus=" << VerificationStatusMapper::GetNameForVerificationStatus(m_verificationStatus) << "&";
   }
+
   if(m_verificationTokenHasBeenSet)
   {
       oStream << location << index << locationValue << ".VerificationToken=" << StringUtils::URLEncode(m_verificationToken.c_str()) << "&";
   }
+
 }
 
 void IdentityVerificationAttributes::OutputToStream(Aws::OStream& oStream, const char* location) const

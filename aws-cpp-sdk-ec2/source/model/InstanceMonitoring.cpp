@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -71,12 +71,14 @@ void InstanceMonitoring::OutputToStream(Aws::OStream& oStream, const char* locat
   {
       oStream << location << index << locationValue << ".InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
   }
+
   if(m_monitoringHasBeenSet)
   {
       Aws::StringStream monitoringLocationAndMemberSs;
       monitoringLocationAndMemberSs << location << index << locationValue << ".Monitoring";
       m_monitoring.OutputToStream(oStream, monitoringLocationAndMemberSs.str().c_str());
   }
+
 }
 
 void InstanceMonitoring::OutputToStream(Aws::OStream& oStream, const char* location) const

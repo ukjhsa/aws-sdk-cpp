@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -71,12 +71,14 @@ void Subnet::OutputToStream(Aws::OStream& oStream, const char* location, unsigne
   {
       oStream << location << index << locationValue << ".SubnetIdentifier=" << StringUtils::URLEncode(m_subnetIdentifier.c_str()) << "&";
   }
+
   if(m_subnetAvailabilityZoneHasBeenSet)
   {
       Aws::StringStream subnetAvailabilityZoneLocationAndMemberSs;
       subnetAvailabilityZoneLocationAndMemberSs << location << index << locationValue << ".SubnetAvailabilityZone";
       m_subnetAvailabilityZone.OutputToStream(oStream, subnetAvailabilityZoneLocationAndMemberSs.str().c_str());
   }
+
 }
 
 void Subnet::OutputToStream(Aws::OStream& oStream, const char* location) const

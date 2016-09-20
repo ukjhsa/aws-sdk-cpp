@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -64,6 +64,7 @@ void BlobAttributeValue::OutputToStream(Aws::OStream& oStream, const char* locat
   {
       oStream << location << index << locationValue << ".Value=" << StringUtils::URLEncode(HashingUtils::Base64Encode(m_value).c_str()) << "&";
   }
+
 }
 
 void BlobAttributeValue::OutputToStream(Aws::OStream& oStream, const char* location) const

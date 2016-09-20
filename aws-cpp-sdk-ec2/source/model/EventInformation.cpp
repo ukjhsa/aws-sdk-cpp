@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -79,14 +79,17 @@ void EventInformation::OutputToStream(Aws::OStream& oStream, const char* locatio
   {
       oStream << location << index << locationValue << ".InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
   }
+
   if(m_eventSubTypeHasBeenSet)
   {
       oStream << location << index << locationValue << ".EventSubType=" << StringUtils::URLEncode(m_eventSubType.c_str()) << "&";
   }
+
   if(m_eventDescriptionHasBeenSet)
   {
       oStream << location << index << locationValue << ".EventDescription=" << StringUtils::URLEncode(m_eventDescription.c_str()) << "&";
   }
+
 }
 
 void EventInformation::OutputToStream(Aws::OStream& oStream, const char* location) const

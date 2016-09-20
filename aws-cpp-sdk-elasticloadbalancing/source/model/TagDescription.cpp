@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -77,6 +77,7 @@ void TagDescription::OutputToStream(Aws::OStream& oStream, const char* location,
   {
       oStream << location << index << locationValue << ".LoadBalancerName=" << StringUtils::URLEncode(m_loadBalancerName.c_str()) << "&";
   }
+
   if(m_tagsHasBeenSet)
   {
       unsigned tagsIdx = 1;
@@ -87,6 +88,7 @@ void TagDescription::OutputToStream(Aws::OStream& oStream, const char* location,
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
   }
+
 }
 
 void TagDescription::OutputToStream(Aws::OStream& oStream, const char* location) const

@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -75,10 +75,12 @@ void PricingDetail::OutputToStream(Aws::OStream& oStream, const char* location, 
   {
         oStream << location << index << locationValue << ".Price=" << StringUtils::URLEncode(m_price) << "&";
   }
+
   if(m_countHasBeenSet)
   {
       oStream << location << index << locationValue << ".Count=" << m_count << "&";
   }
+
 }
 
 void PricingDetail::OutputToStream(Aws::OStream& oStream, const char* location) const

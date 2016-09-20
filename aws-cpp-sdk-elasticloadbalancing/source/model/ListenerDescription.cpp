@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -79,6 +79,7 @@ void ListenerDescription::OutputToStream(Aws::OStream& oStream, const char* loca
       listenerLocationAndMemberSs << location << index << locationValue << ".Listener";
       m_listener.OutputToStream(oStream, listenerLocationAndMemberSs.str().c_str());
   }
+
   if(m_policyNamesHasBeenSet)
   {
       unsigned policyNamesIdx = 1;
@@ -87,6 +88,7 @@ void ListenerDescription::OutputToStream(Aws::OStream& oStream, const char* loca
         oStream << location << index << locationValue << ".PolicyNames.member." << policyNamesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
+
 }
 
 void ListenerDescription::OutputToStream(Aws::OStream& oStream, const char* location) const

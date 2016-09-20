@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -135,34 +135,42 @@ void InstanceHealthSummary::OutputToStream(Aws::OStream& oStream, const char* lo
   {
       oStream << location << index << locationValue << ".NoData=" << m_noData << "&";
   }
+
   if(m_unknownHasBeenSet)
   {
       oStream << location << index << locationValue << ".Unknown=" << m_unknown << "&";
   }
+
   if(m_pendingHasBeenSet)
   {
       oStream << location << index << locationValue << ".Pending=" << m_pending << "&";
   }
+
   if(m_okHasBeenSet)
   {
       oStream << location << index << locationValue << ".Ok=" << m_ok << "&";
   }
+
   if(m_infoHasBeenSet)
   {
       oStream << location << index << locationValue << ".Info=" << m_info << "&";
   }
+
   if(m_warningHasBeenSet)
   {
       oStream << location << index << locationValue << ".Warning=" << m_warning << "&";
   }
+
   if(m_degradedHasBeenSet)
   {
       oStream << location << index << locationValue << ".Degraded=" << m_degraded << "&";
   }
+
   if(m_severeHasBeenSet)
   {
       oStream << location << index << locationValue << ".Severe=" << m_severe << "&";
   }
+
 }
 
 void InstanceHealthSummary::OutputToStream(Aws::OStream& oStream, const char* location) const

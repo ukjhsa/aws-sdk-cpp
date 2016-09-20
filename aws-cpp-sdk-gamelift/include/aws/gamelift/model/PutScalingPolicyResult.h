@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -43,44 +43,44 @@ namespace Model
     PutScalingPolicyResult& operator=(const AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
     /**
-     * <p>Descriptive label associated with this scaling policy. Policy names do not
-     * need to be unique.</p>
+     * <p>Descriptive label associated with a scaling policy. Policy names do not need
+     * to be unique.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>Descriptive label associated with this scaling policy. Policy names do not
-     * need to be unique.</p>
+     * <p>Descriptive label associated with a scaling policy. Policy names do not need
+     * to be unique.</p>
      */
     inline void SetName(const Aws::String& value) { m_name = value; }
 
     /**
-     * <p>Descriptive label associated with this scaling policy. Policy names do not
-     * need to be unique.</p>
+     * <p>Descriptive label associated with a scaling policy. Policy names do not need
+     * to be unique.</p>
      */
     inline void SetName(Aws::String&& value) { m_name = value; }
 
     /**
-     * <p>Descriptive label associated with this scaling policy. Policy names do not
-     * need to be unique.</p>
+     * <p>Descriptive label associated with a scaling policy. Policy names do not need
+     * to be unique.</p>
      */
     inline void SetName(const char* value) { m_name.assign(value); }
 
     /**
-     * <p>Descriptive label associated with this scaling policy. Policy names do not
-     * need to be unique.</p>
+     * <p>Descriptive label associated with a scaling policy. Policy names do not need
+     * to be unique.</p>
      */
     inline PutScalingPolicyResult& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>Descriptive label associated with this scaling policy. Policy names do not
-     * need to be unique.</p>
+     * <p>Descriptive label associated with a scaling policy. Policy names do not need
+     * to be unique.</p>
      */
     inline PutScalingPolicyResult& WithName(Aws::String&& value) { SetName(value); return *this;}
 
     /**
-     * <p>Descriptive label associated with this scaling policy. Policy names do not
-     * need to be unique.</p>
+     * <p>Descriptive label associated with a scaling policy. Policy names do not need
+     * to be unique.</p>
      */
     inline PutScalingPolicyResult& WithName(const char* value) { SetName(value); return *this;}
 

@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -77,6 +77,7 @@ void DBClusterSnapshotAttributesResult::OutputToStream(Aws::OStream& oStream, co
   {
       oStream << location << index << locationValue << ".DBClusterSnapshotIdentifier=" << StringUtils::URLEncode(m_dBClusterSnapshotIdentifier.c_str()) << "&";
   }
+
   if(m_dBClusterSnapshotAttributesHasBeenSet)
   {
       unsigned dBClusterSnapshotAttributesIdx = 1;
@@ -87,6 +88,7 @@ void DBClusterSnapshotAttributesResult::OutputToStream(Aws::OStream& oStream, co
         item.OutputToStream(oStream, dBClusterSnapshotAttributesSs.str().c_str());
       }
   }
+
 }
 
 void DBClusterSnapshotAttributesResult::OutputToStream(Aws::OStream& oStream, const char* location) const

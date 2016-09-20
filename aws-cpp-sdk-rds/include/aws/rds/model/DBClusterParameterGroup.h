@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -33,9 +33,10 @@ namespace Model
 
   /**
    * <p>Contains the result of a successful invocation of the
-   * <a>CreateDBClusterParameterGroup</a> action. </p> <p>This data type is used as a
-   * request parameter in the <a>DeleteDBClusterParameterGroup</a> action, and as a
-   * response element in the <a>DescribeDBClusterParameterGroups</a> action. </p>
+   * <a>CreateDBClusterParameterGroup</a> or <a>CopyDBClusterParameterGroup</a>
+   * action. </p> <p>This data type is used as a request parameter in the
+   * <a>DeleteDBClusterParameterGroup</a> action, and as a response element in the
+   * <a>DescribeDBClusterParameterGroups</a> action. </p>
    */
   class AWS_RDS_API DBClusterParameterGroup
   {
@@ -166,6 +167,41 @@ namespace Model
      */
     inline DBClusterParameterGroup& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+    /**
+     * <p>The Amazon Resource Name (ARN) for the DB cluster parameter group.</p>
+     */
+    inline const Aws::String& GetDBClusterParameterGroupArn() const{ return m_dBClusterParameterGroupArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the DB cluster parameter group.</p>
+     */
+    inline void SetDBClusterParameterGroupArn(const Aws::String& value) { m_dBClusterParameterGroupArnHasBeenSet = true; m_dBClusterParameterGroupArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the DB cluster parameter group.</p>
+     */
+    inline void SetDBClusterParameterGroupArn(Aws::String&& value) { m_dBClusterParameterGroupArnHasBeenSet = true; m_dBClusterParameterGroupArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the DB cluster parameter group.</p>
+     */
+    inline void SetDBClusterParameterGroupArn(const char* value) { m_dBClusterParameterGroupArnHasBeenSet = true; m_dBClusterParameterGroupArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the DB cluster parameter group.</p>
+     */
+    inline DBClusterParameterGroup& WithDBClusterParameterGroupArn(const Aws::String& value) { SetDBClusterParameterGroupArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the DB cluster parameter group.</p>
+     */
+    inline DBClusterParameterGroup& WithDBClusterParameterGroupArn(Aws::String&& value) { SetDBClusterParameterGroupArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the DB cluster parameter group.</p>
+     */
+    inline DBClusterParameterGroup& WithDBClusterParameterGroupArn(const char* value) { SetDBClusterParameterGroupArn(value); return *this;}
+
   private:
     Aws::String m_dBClusterParameterGroupName;
     bool m_dBClusterParameterGroupNameHasBeenSet;
@@ -173,6 +209,8 @@ namespace Model
     bool m_dBParameterGroupFamilyHasBeenSet;
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+    Aws::String m_dBClusterParameterGroupArn;
+    bool m_dBClusterParameterGroupArnHasBeenSet;
   };
 
 } // namespace Model

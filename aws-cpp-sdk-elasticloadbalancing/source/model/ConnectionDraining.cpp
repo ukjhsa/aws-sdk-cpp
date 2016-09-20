@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -75,10 +75,12 @@ void ConnectionDraining::OutputToStream(Aws::OStream& oStream, const char* locat
   {
       oStream << location << index << locationValue << ".Enabled=" << m_enabled << "&";
   }
+
   if(m_timeoutHasBeenSet)
   {
       oStream << location << index << locationValue << ".Timeout=" << m_timeout << "&";
   }
+
 }
 
 void ConnectionDraining::OutputToStream(Aws::OStream& oStream, const char* location) const

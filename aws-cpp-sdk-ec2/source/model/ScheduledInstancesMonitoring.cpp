@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -65,6 +65,7 @@ void ScheduledInstancesMonitoring::OutputToStream(Aws::OStream& oStream, const c
   {
       oStream << location << index << locationValue << ".Enabled=" << m_enabled << "&";
   }
+
 }
 
 void ScheduledInstancesMonitoring::OutputToStream(Aws::OStream& oStream, const char* location) const

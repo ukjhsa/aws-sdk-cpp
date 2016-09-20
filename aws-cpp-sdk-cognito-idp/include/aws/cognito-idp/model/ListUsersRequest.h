@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -17,7 +17,6 @@
 #include <aws/cognito-idp/CognitoIdentityProviderRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/cognito-idp/model/UserStatusType.h>
 
 namespace Aws
 {
@@ -115,17 +114,17 @@ namespace Model
     /**
      * <p>The limit of the request to list users.</p>
      */
-    inline long GetLimit() const{ return m_limit; }
+    inline int GetLimit() const{ return m_limit; }
 
     /**
      * <p>The limit of the request to list users.</p>
      */
-    inline void SetLimit(long value) { m_limitHasBeenSet = true; m_limit = value; }
+    inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
      * <p>The limit of the request to list users.</p>
      */
-    inline ListUsersRequest& WithLimit(long value) { SetLimit(value); return *this;}
+    inline ListUsersRequest& WithLimit(int value) { SetLimit(value); return *this;}
 
     /**
      * <p>An identifier that was returned from the previous call to this operation,
@@ -170,61 +169,51 @@ namespace Model
     inline ListUsersRequest& WithPaginationToken(const char* value) { SetPaginationToken(value); return *this;}
 
     /**
-     * <p>The user status. Can be one of the following:</p> <ul> <li>UNCONFIRMED - User
-     * has been created but not confirmed.</li> <li>CONFIRMED - User has been
-     * confirmed.</li> <li>ARCHIVED - User is no longer active.</li> <li>COMPROMISED -
-     * User is disabled due to a potential security threat.</li> <li>UNKNOWN - User
-     * status is not known.</li> </ul>
+     * <p>The filter for the list users request.</p>
      */
-    inline const UserStatusType& GetUserStatus() const{ return m_userStatus; }
+    inline const Aws::String& GetFilter() const{ return m_filter; }
 
     /**
-     * <p>The user status. Can be one of the following:</p> <ul> <li>UNCONFIRMED - User
-     * has been created but not confirmed.</li> <li>CONFIRMED - User has been
-     * confirmed.</li> <li>ARCHIVED - User is no longer active.</li> <li>COMPROMISED -
-     * User is disabled due to a potential security threat.</li> <li>UNKNOWN - User
-     * status is not known.</li> </ul>
+     * <p>The filter for the list users request.</p>
      */
-    inline void SetUserStatus(const UserStatusType& value) { m_userStatusHasBeenSet = true; m_userStatus = value; }
+    inline void SetFilter(const Aws::String& value) { m_filterHasBeenSet = true; m_filter = value; }
 
     /**
-     * <p>The user status. Can be one of the following:</p> <ul> <li>UNCONFIRMED - User
-     * has been created but not confirmed.</li> <li>CONFIRMED - User has been
-     * confirmed.</li> <li>ARCHIVED - User is no longer active.</li> <li>COMPROMISED -
-     * User is disabled due to a potential security threat.</li> <li>UNKNOWN - User
-     * status is not known.</li> </ul>
+     * <p>The filter for the list users request.</p>
      */
-    inline void SetUserStatus(UserStatusType&& value) { m_userStatusHasBeenSet = true; m_userStatus = value; }
+    inline void SetFilter(Aws::String&& value) { m_filterHasBeenSet = true; m_filter = value; }
 
     /**
-     * <p>The user status. Can be one of the following:</p> <ul> <li>UNCONFIRMED - User
-     * has been created but not confirmed.</li> <li>CONFIRMED - User has been
-     * confirmed.</li> <li>ARCHIVED - User is no longer active.</li> <li>COMPROMISED -
-     * User is disabled due to a potential security threat.</li> <li>UNKNOWN - User
-     * status is not known.</li> </ul>
+     * <p>The filter for the list users request.</p>
      */
-    inline ListUsersRequest& WithUserStatus(const UserStatusType& value) { SetUserStatus(value); return *this;}
+    inline void SetFilter(const char* value) { m_filterHasBeenSet = true; m_filter.assign(value); }
 
     /**
-     * <p>The user status. Can be one of the following:</p> <ul> <li>UNCONFIRMED - User
-     * has been created but not confirmed.</li> <li>CONFIRMED - User has been
-     * confirmed.</li> <li>ARCHIVED - User is no longer active.</li> <li>COMPROMISED -
-     * User is disabled due to a potential security threat.</li> <li>UNKNOWN - User
-     * status is not known.</li> </ul>
+     * <p>The filter for the list users request.</p>
      */
-    inline ListUsersRequest& WithUserStatus(UserStatusType&& value) { SetUserStatus(value); return *this;}
+    inline ListUsersRequest& WithFilter(const Aws::String& value) { SetFilter(value); return *this;}
+
+    /**
+     * <p>The filter for the list users request.</p>
+     */
+    inline ListUsersRequest& WithFilter(Aws::String&& value) { SetFilter(value); return *this;}
+
+    /**
+     * <p>The filter for the list users request.</p>
+     */
+    inline ListUsersRequest& WithFilter(const char* value) { SetFilter(value); return *this;}
 
   private:
     Aws::String m_userPoolId;
     bool m_userPoolIdHasBeenSet;
     Aws::Vector<Aws::String> m_attributesToGet;
     bool m_attributesToGetHasBeenSet;
-    long m_limit;
+    int m_limit;
     bool m_limitHasBeenSet;
     Aws::String m_paginationToken;
     bool m_paginationTokenHasBeenSet;
-    UserStatusType m_userStatus;
-    bool m_userStatusHasBeenSet;
+    Aws::String m_filter;
+    bool m_filterHasBeenSet;
   };
 
 } // namespace Model

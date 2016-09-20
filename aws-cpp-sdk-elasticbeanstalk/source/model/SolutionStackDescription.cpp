@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -77,6 +77,7 @@ void SolutionStackDescription::OutputToStream(Aws::OStream& oStream, const char*
   {
       oStream << location << index << locationValue << ".SolutionStackName=" << StringUtils::URLEncode(m_solutionStackName.c_str()) << "&";
   }
+
   if(m_permittedFileTypesHasBeenSet)
   {
       unsigned permittedFileTypesIdx = 1;
@@ -85,6 +86,7 @@ void SolutionStackDescription::OutputToStream(Aws::OStream& oStream, const char*
         oStream << location << index << locationValue << ".PermittedFileTypes.member." << permittedFileTypesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
+
 }
 
 void SolutionStackDescription::OutputToStream(Aws::OStream& oStream, const char* location) const

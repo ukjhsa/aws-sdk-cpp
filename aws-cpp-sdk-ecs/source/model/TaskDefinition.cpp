@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -31,6 +31,8 @@ TaskDefinition::TaskDefinition() :
     m_taskDefinitionArnHasBeenSet(false),
     m_containerDefinitionsHasBeenSet(false),
     m_familyHasBeenSet(false),
+    m_taskRoleArnHasBeenSet(false),
+    m_networkModeHasBeenSet(false),
     m_revision(0),
     m_revisionHasBeenSet(false),
     m_volumesHasBeenSet(false),
@@ -43,6 +45,8 @@ TaskDefinition::TaskDefinition(const JsonValue& jsonValue) :
     m_taskDefinitionArnHasBeenSet(false),
     m_containerDefinitionsHasBeenSet(false),
     m_familyHasBeenSet(false),
+    m_taskRoleArnHasBeenSet(false),
+    m_networkModeHasBeenSet(false),
     m_revision(0),
     m_revisionHasBeenSet(false),
     m_volumesHasBeenSet(false),
@@ -76,6 +80,20 @@ TaskDefinition& TaskDefinition::operator =(const JsonValue& jsonValue)
     m_family = jsonValue.GetString("family");
 
     m_familyHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("taskRoleArn"))
+  {
+    m_taskRoleArn = jsonValue.GetString("taskRoleArn");
+
+    m_taskRoleArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("networkMode"))
+  {
+    m_networkMode = NetworkModeMapper::GetNetworkModeForName(jsonValue.GetString("networkMode"));
+
+    m_networkModeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("revision"))
@@ -140,6 +158,17 @@ JsonValue TaskDefinition::Jsonize() const
   {
    payload.WithString("family", m_family);
 
+  }
+
+  if(m_taskRoleArnHasBeenSet)
+  {
+   payload.WithString("taskRoleArn", m_taskRoleArn);
+
+  }
+
+  if(m_networkModeHasBeenSet)
+  {
+   payload.WithString("networkMode", NetworkModeMapper::GetNameForNetworkMode(m_networkMode));
   }
 
   if(m_revisionHasBeenSet)

@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -44,19 +44,19 @@ namespace Model
      * <p>The minimum length of the password policy that you have set. Cannot be less
      * than 6.</p>
      */
-    inline long GetMinimumLength() const{ return m_minimumLength; }
+    inline int GetMinimumLength() const{ return m_minimumLength; }
 
     /**
      * <p>The minimum length of the password policy that you have set. Cannot be less
      * than 6.</p>
      */
-    inline void SetMinimumLength(long value) { m_minimumLengthHasBeenSet = true; m_minimumLength = value; }
+    inline void SetMinimumLength(int value) { m_minimumLengthHasBeenSet = true; m_minimumLength = value; }
 
     /**
      * <p>The minimum length of the password policy that you have set. Cannot be less
      * than 6.</p>
      */
-    inline PasswordPolicyType& WithMinimumLength(long value) { SetMinimumLength(value); return *this;}
+    inline PasswordPolicyType& WithMinimumLength(int value) { SetMinimumLength(value); return *this;}
 
     /**
      * <p>In the password policy that you have set, refers to whether you have required
@@ -131,7 +131,7 @@ namespace Model
     inline PasswordPolicyType& WithRequireSymbols(bool value) { SetRequireSymbols(value); return *this;}
 
   private:
-    long m_minimumLength;
+    int m_minimumLength;
     bool m_minimumLengthHasBeenSet;
     bool m_requireUppercase;
     bool m_requireUppercaseHasBeenSet;

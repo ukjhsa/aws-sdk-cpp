@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -71,12 +71,14 @@ void ReceiptFilter::OutputToStream(Aws::OStream& oStream, const char* location, 
   {
       oStream << location << index << locationValue << ".Name=" << StringUtils::URLEncode(m_name.c_str()) << "&";
   }
+
   if(m_ipFilterHasBeenSet)
   {
       Aws::StringStream ipFilterLocationAndMemberSs;
       ipFilterLocationAndMemberSs << location << index << locationValue << ".IpFilter";
       m_ipFilter.OutputToStream(oStream, ipFilterLocationAndMemberSs.str().c_str());
   }
+
 }
 
 void ReceiptFilter::OutputToStream(Aws::OStream& oStream, const char* location) const

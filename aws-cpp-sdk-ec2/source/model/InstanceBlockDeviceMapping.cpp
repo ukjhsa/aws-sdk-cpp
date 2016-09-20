@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -71,12 +71,14 @@ void InstanceBlockDeviceMapping::OutputToStream(Aws::OStream& oStream, const cha
   {
       oStream << location << index << locationValue << ".DeviceName=" << StringUtils::URLEncode(m_deviceName.c_str()) << "&";
   }
+
   if(m_ebsHasBeenSet)
   {
       Aws::StringStream ebsLocationAndMemberSs;
       ebsLocationAndMemberSs << location << index << locationValue << ".Ebs";
       m_ebs.OutputToStream(oStream, ebsLocationAndMemberSs.str().c_str());
   }
+
 }
 
 void InstanceBlockDeviceMapping::OutputToStream(Aws::OStream& oStream, const char* location) const

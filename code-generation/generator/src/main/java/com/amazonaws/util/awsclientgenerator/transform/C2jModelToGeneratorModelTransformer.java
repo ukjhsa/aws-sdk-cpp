@@ -79,6 +79,7 @@ public class C2jModelToGeneratorModelTransformer {
 
         Metadata metadata = new Metadata();
         metadata.setApiVersion(c2jMetadata.getApiVersion());
+        metadata.setConcatAPIVersion(c2jMetadata.getApiVersion().replace("-", ""));
         metadata.setEndpointPrefix(c2jMetadata.getEndpointPrefix());
         metadata.setSigningName(c2jMetadata.getSigningName() != null ? c2jMetadata.getSigningName() : c2jMetadata.getEndpointPrefix());
         metadata.setJsonVersion(c2jMetadata.getJsonVersion());
@@ -252,9 +253,18 @@ public class C2jModelToGeneratorModelTransformer {
             Shape requestShape = renameShape(shapes.get(c2jOperation.getInput().getShape()), requestName);
             requestShape.setRequest(true);
             requestShape.setReferenced(true);
+            requestShape.setLocationName(c2jOperation.getInput().getLocationName());
+            requestShape.setXmlNamespace(c2jOperation.getInput().getXmlNamespace() != null ? c2jOperation.getInput().getXmlNamespace().getUri() : null);
+
+            if(requestShape.getLocationName() != null && requestShape.getLocationName().length() > 0 &&
+                    (requestShape.getPayload() == null || requestShape.getPayload().length() == 0) ) {
+                requestShape.setPayload(requestName);
+            }
+
             ShapeMember requestMember = new ShapeMember();
             requestMember.setShape(requestShape);
             requestMember.setDocumentation(formatDocumentation(c2jOperation.getInput().getDocumentation(), 3));
+
             operation.setRequest(requestMember);
         }
 

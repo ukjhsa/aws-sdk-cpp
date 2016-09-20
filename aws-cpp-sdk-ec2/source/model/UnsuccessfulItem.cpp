@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
@@ -73,10 +73,12 @@ void UnsuccessfulItem::OutputToStream(Aws::OStream& oStream, const char* locatio
       errorLocationAndMemberSs << location << index << locationValue << ".Error";
       m_error.OutputToStream(oStream, errorLocationAndMemberSs.str().c_str());
   }
+
   if(m_resourceIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".ResourceId=" << StringUtils::URLEncode(m_resourceId.c_str()) << "&";
   }
+
 }
 
 void UnsuccessfulItem::OutputToStream(Aws::OStream& oStream, const char* location) const
